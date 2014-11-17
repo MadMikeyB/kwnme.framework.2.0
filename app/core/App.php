@@ -12,15 +12,15 @@ class App
 	{
 		$url = self::parseUrl();
 
-		if ( file_exists( '../app/controllers/' . $url[0] . '.php' ) ) # Can we use class_exists?
+		if ( file_exists( '../app/controllers/' . ucfirst( $url[0] ) . '.php' ) ) # Can we use class_exists?
 		{
 			$this->controller = $url[0];
 			unset($url[0]);
 		}
 
-		require_once '../app/controllers/' . $this->controller . '.php';
+		require_once '../app/controllers/' . ucfirst( $this->controller ). '.php';
 
-		$this->controller = new $this->controller; # Objectify
+		$this->controller = new $this->controller(); # Objectify
 
 		if ( isset( $url[1] ) )
 		{
