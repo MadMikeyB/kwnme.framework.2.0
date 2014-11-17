@@ -6,4 +6,5 @@ class Home extends Controller
 	{
 		echo 'home/index';
 	}
+	
 }
