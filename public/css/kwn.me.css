@@ -1,0 +1,456 @@
+
+/**
+ * kwn.me URL Short CSS
+ * by Floris Fiedeldij Dop, mrfloris.com
+ */
+
+/* TAGS 
+html {
+text-transform:uppercase;
+} */
+
+html {
+z-index:1}
+body {
+	font-family: Arial, Helvetica, MS Trebuchet, sans-serif;
+}
+
+img { border: none; }
+a { color: #666; text-decoration: none; }
+a:hover { text-decoration: underline; color : #000; }
+highlight { font-size:large; color : #CD0000; }
+
+/* CLASSES */
+.info {
+	background: url(/web/20130924024037/http://kwn.me/img/info.png) no-repeat left;
+	padding-left: 8px;
+	text-decoration: none;
+}
+a.info:hover {
+	text-decoration: none;
+}
+.box {
+	width: 620px;
+	margin: 0 auto;
+	margin-top: 100px;
+	text-align: left;
+}
+
+.box p {
+	margin: 6px 0;
+}
+
+.box #url, #slug {
+	margin: 0 8px 0 6px;
+	padding-left: 12px;
+}
+
+.box #url {
+	width:600px;
+	height:45px;
+	color:#999;
+	border:1px solid #999;
+	font-size:large; /* not valid mikey -Floris */
+	line-height:1.5em;
+}
+
+.box #slug {
+	width:200px;
+	height:35px;
+	color:#999;
+	border:1px solid #999;
+	font-size:small; /* not valid mikey -Floris */
+	line-height:1.5em;
+}
+
+.box #process {
+	width:275px;
+	height:35px;
+	border:1px solid #999;
+	font-size:large;
+	line-height:1.5em;
+	margin: 12px 0px 4px 0px;
+	background: #ccc;
+}
+
+.optional {
+	color: #999;
+	font: 12px Arial, Helvetica, Trebuchet MS, Verdana, sans-serif;
+}
+.bookmarklet {
+	text-decoration: none;
+	font-weight: bold;
+	padding: 2px 4px;
+	background: #ddd;
+	border: 1px solid #999;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	cursor: move;
+}
+a.bookmarklet:hover {
+	text-decoration: none;
+}
+
+/* css3 nonsense */
+.box #url {
+	-webkit-box-shadow: 1px 1px 12px #c1c2d4;
+	-moz-box-shadow: 1px 1px 12px #c1c2d4;
+	box-shadow: 1px 1px 12px #c1c2d4;
+}
+.box #process {
+	text-shadow: 1px 1px 1px #fff;
+	filter: dropshadow(color=#fff, offx=1, offy=1);
+}
+
+.ad{
+	-webkit-box-shadow: 1px 1px 12px #c1c2d4;
+	-moz-box-shadow: 1px 1px 12px #c1c2d4;
+	box-shadow: 1px 1px 12px #c1c2d4;
+	width:125px;
+	height:125px;
+}
+
+/* IDs */
+
+#expand{opacity: 0.3;-webkit-transition: all 200ms linear; border:0 none}
+#expand:hover{solid;opacity: 1;}
+
+#floris { /* awesome */ }
+#mikey { /* almost as awesome */ }
+
+
+/* stats */
+
+dl {
+	font: 18px Arial, Helvetica,Lucida Grande, Trebuchet MS, Verdana, sans-serif;
+	cursor: default;
+	background-color: #eee;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+dl, dt {
+	margin: 0;
+	padding: 0;	
+	display: block;
+	float: left;	
+}
+dd, dt {
+	padding: 3px;
+	text-align: left;
+}
+dt {
+	width: 200px;
+	padding-left: 12px;
+
+}
+dd {
+	display: block;
+	margin-left: 200px;
+	width: 425px;
+	white-space: nowrap;
+	overflow: auto;
+	margin-right: 15px;
+	padding-right: 6px;
+	padding-left: 12px;
+}
+.grey1 {
+	background-color: #DDD;
+}
+.grey2 {
+	background-color: #eee;
+}
+.h1stats {
+	font-weight: normal;
+	font-family: Arial, MS Trebuchet, sans-serif;
+}
+#boxshadow {
+	-webkit-box-shadow: 1px 1px 12px #999;
+	-moz-box-shadow: 1px 1px 12px #999;
+	box-shadow: 1px 1px 12px #999;
+}
+/* admin/manage.php .PNG icons, down a bit */
+.dabit {
+	float:right;
+}
+.dabit img {
+	border: 0 none;
+}
+.account_header {
+	background-color: #DDD;
+	padding: 12px;
+	padding-left: 20px;
+	text-shadow: 1px 1px 2px #ffffff;
+	 filter: dropshadow(color=#ffffff, offx=1, offy=2);
+	-webkit-border-top-left-radius: 6px;
+	-webkit-border-top-right-radius: 16px;
+	-webkit-border-bottom-right-radius: 6px;
+	-webkit-border-bottom-left-radius: 16px;
+	-moz-border-radius-topleft: 6px;
+	-moz-border-radius-topright: 16px;
+	-moz-border-radius-bottomright: 6px;
+	-moz-border-radius-bottomleft: 16px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 16px;
+	border-bottom-right-radius: 6px;
+	border-bottom-left-radius: 16px; 
+	-webkit-box-shadow: 0px 0px 4px #0d1930;
+	-moz-box-shadow: 0px 0px 4px #0d1930;
+	box-shadow: 0px 0px 4px #0d1930; 
+	
+	 -webkit-box-shadow: 0 0 8px #333 inset,
+				/*	 1px  1px 3px red,
+					-1px  1px 3px blue,
+					-1px -1px 3px lime,
+					 1px -1px 3px yellow*/;
+
+	-moz-box-shadow: 0 0 8px #333 inset,
+				  /*   1px  1px 3px red,
+				    -1px  1px 3px blue,
+				    -1px -1px 3px lime,
+				     1px -1px 3px yellow*/;
+
+	box-shadow: 0 0 8px #333 inset,
+				     /* 1px  1px 3px red,
+				    -1px  1px 3px blue,
+				    -1px -1px 3px lime,
+				     1px -1px 3px yellow*/; 
+
+}
+.account_text {
+	background-color: #eee;
+	padding: 12px;
+	padding-left: 20px;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 13px;
+	-webkit-border-bottom-right-radius: 3px;
+	-webkit-border-bottom-left-radius: 13px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 13px;
+	-moz-border-radius-bottomright: 3px;
+	-moz-border-radius-bottomleft: 13px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 13px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 13px;
+	-webkit-box-shadow: 0px 0px 4px #0d1930;
+	-moz-box-shadow: 0px 0px 4px #0d1930;
+	box-shadow: 0px 0px 4px #0d1930;
+}
+.account_form {
+	background-color: #fff;
+	padding: 12px;
+	padding-left: 20px;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 13px;
+	-webkit-border-bottom-right-radius: 3px;
+	-webkit-border-bottom-left-radius: 13px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 13px;
+	-moz-border-radius-bottomright: 3px;
+	-moz-border-radius-bottomleft: 13px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 13px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 13px;
+	-webkit-box-shadow: 0px 0px 4px #0d1930;
+	-moz-box-shadow: 0px 0px 4px #0d1930;
+	box-shadow: 0px 0px 4px #0d1930;
+}
+.box #login {
+	width:150px;
+	height:34px;
+	border:1px solid #999;
+	font-size:large;
+	line-height:1.5em;
+	margin: 12px 0px 4px 0px;
+	background: #ccc;
+}
+.box #register {
+	width:150px;
+	height:34px;
+	border:1px solid #999;
+	font-size:large;
+	line-height:1.5em;
+	margin: 12px 0px 4px 0px;
+	background: #ccc;
+}
+
+.account_form label {
+position: absolute;
+}
+.account_form input[type=\\\\\\\\\\\\\\\"text\\\\\\\\\\\\\\\"], form input[type=\\\\\\\\\\\\\\\"password\\\\\\\\\\\\\\\"] {
+	position: relative;
+	left: 95px;
+}
+.account_form fieldset {
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 13px;
+	-webkit-border-bottom-right-radius: 3px;
+	-webkit-border-bottom-left-radius: 13px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 13px;
+	-moz-border-radius-bottomright: 3px;
+	-moz-border-radius-bottomleft: 13px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 13px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 13px;
+}
+.account_form legend {
+	color: #003366;
+}
+.account_button {
+    display: inline-block;
+    margin: 20px;
+
+    padding: 3px 6px;
+    font-family: Lucida Grande, Arial, sans-serif;
+    font-size: 13px;
+
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+
+    border: 1px solid rgba(0, 0, 0, 0.6);
+
+    background: -webkit-gradient(linear, left top, left bottom, from(#fbfcfb), to(#9d9e9d));
+    background: -moz-linear-gradient(#fbfcfb, #9d9e9d);
+    background-color: #c0c2c0;
+
+    text-shadow: rgba(255, 255, 255, 0.4) 0px 1px;
+
+    -webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px;
+    -moz-box-shadow: rgba(255, 255, 255, 0.4) 0 1px;
+    box-shadow: rgba(255, 255, 255, 0.4) 0 1px;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    cursor: default;
+}
+
+.account_button:active {
+    background: #B5B5B5;
+    -webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px,
+                        black 0px 1px 3px inset,
+                        rgba(0, 0, 0, 0.4) 0px -5px 12px inset;
+
+    -moz-box-shadow: rgba(255, 255, 255, 0.4) 0 1px,
+                     black 0px 1px 3px inset,
+                     rgba(0, 0, 0, 0.4) 0px -5px 12px inset;
+
+    box-shadow: rgba(255, 255, 255, 0.4) 0 1px,
+                black 0px 1px 3px inset,
+                rgba(0, 0, 0, 0.4) 0px -5px 12px inset;
+
+    text-shadow: rgba(255, 255, 255, 0.3) 0px 1px;
+}
+
+.smalltxt {
+font-family:Verdana;
+letter-spacing:-1px;
+font-size:9pt;
+}
+
+.kwnlogin {
+font-family:Verdana;
+letter-spacing:-1px;
+font-size:11pt;
+}
+
+.idxstats {
+vertical-align:bottom;
+margin-top:50px;
+color:#999;
+font-size:small;
+font-family:arial;
+}
+
+.footertxt {
+vertical-align:bottom;
+margin-top:30px;
+color:#999;
+font-size:xx-small;
+font-family:arial;
+}
+
+.kwnloginbox {
+position:absolute;
+top:10px;
+right:15px;
+}
+
+.right {
+float:right;
+}
+.bkmarkletbox {
+font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
+margin:0 auto;
+}
+.bkmarkletbox h1 {
+color:#444;
+font-size:20px;
+float:left;
+}
+
+/* selection */
+
+div.idxstats::selection, div.kwnlogin::selection, .footerstats::selection, .optional::selection, div.footertxt::selection, a::selection, body::selection, html::selection, .box::selection, input::selection, p::selection, highlight::selection, img::selection { background:  #fff2a8; }
+
+html::-moz-selection, body::-moz-selection, .box::-moz-selection, input::-moz-selection, p::-moz-selection, highlight::-moz-selection, a::-moz-selection, .footerstats::-moz-selection, div.footertxt::-moz-selection, img::-moz-selection, div.idxstats::-moz-selection, div.kwnlogin::-moz-selection, .optional::-moz-selection { background:  #fff2a8; }
+
+/* mikey logo 
+
+.logo {
+margin-top:-65px;
+padding-bottom:25px;
+opacity: .45;
+background:url(/web/20130924024037/http://offtopichut.com/uploads/gallery/album_7/med_gallery_1_7_40460.png) top left;
+background-width:610px;
+height:245px;
+}
+
+.logo:hover {
+opacity:1;
+}*/
+
+
+
+.idxstats::before {
+position:absolute;
+left:15%;
+right:15%;
+bottom:5%;
+font-weight:bold;
+font-size:62pt;
+content: "kwn.me/support";
+color:#444;
+margin-bottom:15%;
+z-index:-1
+}
+/**
+.logo::before {
+position:absolute;
+left:15%;
+right:25%;
+top:1%;
+font-weight:bold;
+font-size:62pt;
+content: "kwn.me/support";
+color:#444;
+margin-bottom:15%;
+z-index:-1
+}
+.logo::after {
+content:"";
+position:absolute;
+left:40%;
+right:40%;
+top:85%;
+font-weight:bold;
+font-size:26pt;
+color:#444;
+margin-bottom:5%;
+z-index:-1
+} **/

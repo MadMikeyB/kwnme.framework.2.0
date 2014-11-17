@@ -24,7 +24,9 @@ class Controller
 	{
 		if ( file_exists( '../app/views/' . ucfirst( $view ) . '.php' ) )
 		{
+			require_once '../app/views/Layout/Header.php';
 			require_once '../app/views/' . ucfirst( $view ) . '.php';
+			require_once '../app/views/Layout/Footer.php';
 		}
 		else
 		{
