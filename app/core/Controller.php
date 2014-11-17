@@ -31,4 +31,10 @@ class Controller
 			# Error Handler
 		}
 	}
+
+	public function redirect( $url, $code='302' )
+	{
+		header( 'Location: '. $url, $code );
+		exit;
+	}
 }

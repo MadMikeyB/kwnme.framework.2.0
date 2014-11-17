@@ -6,7 +6,5 @@ class User extends Eloquent
 {
 	public $name;
 	public $email;
-
-	protected $fillable = array('username', 'email');
-
+	protected $fillable = array('username', 'email', 'password');	
 }
