@@ -1,7 +1,20 @@
 <h2>Register</h2>
-<form action="/kwnme/public/user/create" role="form" method="POST">
-	<input type="text" id="username" name="username" required />
-	<input type="password" id="password" name="password" required />
-	<input type="email" id="email" name="email" required />
-	<input type="submit" value="Sign up" />
+<form role="form" action="/kwnme/public/user/create" method="POST">
+	<div class="form-group">
+    	<label for="username">Username:</label>
+    	<input type="text" class="form-control" id="username">
+    </div>
+    <div class="form-group">
+    	<label for="email">Email address:</label>
+    	<input type="email" class="form-control" id="email">
+    </div>
+    <div class="form-group">
+    	<label for="password">Password:</label>
+    	<input type="password" class="form-control" id="password">
+    </div>
+    <div class="checkbox">
+    	<label><input type="checkbox"> I agree to the <a href="#">Terms &amp; Conditions</a></label>
+	</div>
+	<button type="submit" class="btn btn-default pull-right">Sign Up</button>
 </form>
+<div class="clear clearfix"></div>

@@ -3,11 +3,10 @@
 class Home extends Controller
 {
 
-	public function index( $name = '' )
+	public function index()
 	{
-		$user = User::find(1);
+		$user = User::all();
 		$this->view('Home/Index', $user);
-
 	}
 
 	

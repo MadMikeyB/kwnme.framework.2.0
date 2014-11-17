@@ -16,7 +16,7 @@ body {
 }
 
 img { border: none; }
-a { color: #666; text-decoration: none; }
+a { color: #666 !important; text-decoration: none; }
 a:hover { text-decoration: underline; color : #000; }
 highlight { font-size:large; color : #CD0000; }
 
