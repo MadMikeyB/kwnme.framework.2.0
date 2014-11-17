@@ -9,9 +9,9 @@ class Controller
 
 	protected function model( $model )
 	{
-		if ( file_exists( '../app/models/' . $model . '.php' ) )
+		if ( file_exists( '../app/models/' . ucfirst( $model ) . '.php' ) )
 		{
-			require_once '../app/models/' . $model . '.php';
+			require_once '../app/models/' . ucfirst( $model ) . '.php';
 			return new $model();
 		}
 		else
@@ -22,9 +22,9 @@ class Controller
 
 	public function view( $view, $data = array() )
 	{
-		if ( file_exists( '../app/views/' . $view . '.php' ) )
+		if ( file_exists( '../app/views/' . ucfirst( $view ) . '.php' ) )
 		{
-			require_once '../app/views/' . $view . '.php';
+			require_once '../app/views/' . ucfirst( $view ) . '.php';
 		}
 		else
 		{
