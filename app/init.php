@@ -1,9 +1,11 @@
 <?php
+define('KWN_ROOT', dirname(__DIR__));
+define('KWN_APP_ROOT', dirname(__DIR__) . '/app/');
 # composer
-require_once '../vendor/autoload.php';
+require_once KWN_ROOT . '/vendor/autoload.php';
 # db config
-require_once 'database.php';
+require_once KWN_APP_ROOT . 'database.php';
 # app
-require_once 'core/App.php';
+require_once KWN_APP_ROOT . 'core/App.php';
 # controller
-require_once 'core/Controller.php';
+require_once KWN_APP_ROOT . 'core/Controller.php';

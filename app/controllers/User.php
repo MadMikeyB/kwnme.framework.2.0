@@ -13,7 +13,6 @@ class User extends Controller
 	public function create()
 	{
 		$input = $_POST; // gotta be a better way
-		echo '<xmp>'; print_r($input); exit;
 		if ( $input )
 		{
 			User::create(

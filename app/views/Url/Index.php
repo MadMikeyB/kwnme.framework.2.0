@@ -4,3 +4,5 @@
 	<br style="clear:both">
 	<p></p><div align="center"><input type="submit" name="process" value="Shorten →" id="process"></div><p></p>
 </form>
+
+<?=$data?>
