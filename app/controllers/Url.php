@@ -2,26 +2,35 @@
 
 class Url extends Controller
 {
+
 	public function index()
 	{
-		$user = User::all(); // Eloquent works here.....
 		$input = $_POST;
 		if ( $input )
 		{
-			print_r($input);
-			//$base = base_convert($maxId, 12, 32);
+			if( filter_var( $input['url'], FILTER_VALIDATE_URL ) === FALSE )
+			{
+				$error = 'Please enter a valid URL.';
+				$this->view('Error/Error', $error);
+			}
+			else
+			{
+				$shortUrl = new Url();
+				$shortUrl->url = $input['url'];
+				$shortUrl->slug = isset( $input['slug'] ) ? $input['slug'] : NULL;
+				$shortUrl->userIP = $_SERVER['REMOTE_ADDR'];
+				$shortUrl->save();
 
-			$shortUrl = Url::create( // Eloquent Doesn't work here.
-							array(
-									'url'	=> $input['url'],
-									'slug'	=> isset( $input['slug'] ) ? $input['slug'] : NULL,
-							)
-						);
-			$this->view('Url/Result', $input);
+				$shortUrl->base = base_convert($shortUrl->id, 12, 32);
+				$shortUrl->update();
+
+				$this->view('Url/Result', $shortUrl);
+			}
+
 		}
 		else
 		{		
-			$this->view('Url/Index', $user);
+			$this->view('Url/Index', '');
 		}
 	}
 

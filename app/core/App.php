@@ -3,7 +3,7 @@
 class App
 {
 	# Set defaults
-	protected $controller = 'home';
+	protected $controller = 'url';
 	protected $method = 'index';
 	protected $params = array();
 

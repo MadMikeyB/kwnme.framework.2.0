@@ -4,7 +4,7 @@ class Controller
 {
 	public function __construct()
 	{
-
+		
 	}
 
 	protected function model( $model )
