@@ -1,5 +1,5 @@
 <h2>Register</h2>
-<form role="form" action="/kwnme/public/user/create" method="POST">
+<form role="form" method="POST">
 	<div class="form-group">
     	<label for="username">Username:</label>
     	<input type="text" class="form-control" id="username">
@@ -13,7 +13,7 @@
     	<input type="password" class="form-control" id="password">
     </div>
     <div class="checkbox">
-    	<label><input type="checkbox"> I agree to the <a href="#">Terms &amp; Conditions</a></label>
+    	<label><input type="checkbox"> I agree to the <a href="/kwnme/public/page/terms">Terms &amp; Conditions</a></label>
 	</div>
 	<button type="submit" class="btn btn-default pull-right">Sign Up</button>
 </form>

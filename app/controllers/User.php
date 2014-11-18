@@ -10,6 +10,11 @@ class User extends Controller
 		self::login();
 	}
 
+	public function login()
+	{
+		$this->view('User/Login');
+	}
+
 	public function create()
 	{
 		$input = $_POST; // gotta be a better way
@@ -23,21 +28,15 @@ class User extends Controller
 					)
 			);
 
-			$this->redirect('login');
+			$this->redirect('/login');
+		}
+		else
+		{
+			$this->view('User/Register');
 		}
 	}
 
-	public function login()
-	{
-		$this->view('User/Login');
-	}
-
-	public function register()
-	{
-		$this->view('User/Register');
-	}
-
-	public function admin_index()
+	public function admin()
 	{
 		$users = User::all(); // User:: not working here. :(
 		$this->view('User/Admin/Index', $users);

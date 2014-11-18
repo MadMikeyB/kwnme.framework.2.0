@@ -1,0 +1,9 @@
+<h2>Terms &amp; Conditions</h2>
+<div class="well well-lg">
+<strong>Acceptance of Terms</strong>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer convallis ante sed ante finibus finibus in id tellus. Etiam at placerat ligula. Aliquam erat volutpat. Ut finibus neque ut pulvinar venenatis. Nam ullamcorper vitae risus vitae finibus. Phasellus vitae velit in diam mattis eleifend. Donec volutpat mattis magna vitae sagittis. Nam venenatis tortor euismod felis tincidunt, at rutrum turpis elementum. Mauris consectetur justo nunc, ut tempus neque pulvinar vel. Praesent dictum neque nec velit lobortis imperdiet.</p>
+<strong>Content</strong>
+<p>Vivamus ut magna lectus. Cras ultricies ante convallis ante aliquet, sit amet consequat odio aliquet. Fusce convallis molestie est at pharetra. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed semper lacinia mi eu efficitur. Sed feugiat, nunc sed finibus interdum, lectus nulla dignissim sapien, eu suscipit magna purus quis sem. Sed non tortor varius nisi aliquam rutrum. Suspendisse ultricies faucibus sem pellentesque consequat. Vestibulum volutpat congue congue. Praesent placerat placerat lorem a interdum.</p>
+<strong>Registration</strong>
+<p>Morbi efficitur dolor leo, et bibendum risus laoreet blandit. Sed viverra, massa non elementum varius, arcu tellus convallis libero, a dictum lectus turpis in justo. Sed accumsan est vel mollis tristique. Nullam laoreet cursus enim sed varius. Suspendisse quis tincidunt ligula, sed hendrerit dolor. Integer ac nisl erat. Sed eu vehicula nunc, in fringilla mi. Nulla facilisi. Proin vitae purus quis magna finibus vulputate. Nam suscipit venenatis nunc in eleifend. Etiam molestie tortor quis enim ornare, id fermentum leo varius.</p>
+</div>

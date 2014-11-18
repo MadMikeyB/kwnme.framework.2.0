@@ -34,4 +34,22 @@ class Url extends Controller
 		}
 	}
 
+	public function forward( $url='' )
+	{
+		$_url = Url::where( 'url', '=', $url );
+		if ( $_url )
+		{
+			$clicks = new Url();
+			$clicks->clickcount = $_url->clickount +1;
+			$clicks->lastvisited = time();
+			$clicks->save();
+
+			$this->redirect( $_url->url );
+		}
+		else
+		{
+			$this->view('Error/Error', 'Invalid Slug');
+		}
+	}
+
 }

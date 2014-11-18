@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     $vendorDir . '/illuminate/support/Illuminate/Support/helpers.php',
+    $baseDir . '/app/database.php',
 );

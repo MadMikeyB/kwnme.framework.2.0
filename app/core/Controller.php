@@ -17,6 +17,7 @@ class Controller
 		else
 		{
 			# Error Handler
+			self::view('Error/Error', 'An Error Ocurred [#NOMODEL]');
 		}
 	}
 
@@ -31,6 +32,7 @@ class Controller
 		else
 		{
 			# Error Handler
+			self::view('Error/Error', 'An Error Ocurred [#NOVIEW]');
 		}
 	}
 

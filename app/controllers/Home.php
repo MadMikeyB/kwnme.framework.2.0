@@ -9,6 +9,4 @@ class Home extends Controller
 		$this->view('Home/Index', $user);
 	}
 
-	
-
 }
