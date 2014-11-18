@@ -10,7 +10,7 @@ class App
 	# Constructor
 	public function __construct()
 	{
-		$url = self::parseUrl();
+		$url = self::router();
 
 		if ( file_exists( '../app/controllers/' . ucfirst( $url[0] ) . '.php' ) ) # Can we use class_exists?
 		{
@@ -19,7 +19,6 @@ class App
 		}
 
 		require_once '../app/controllers/' . ucfirst( $this->controller ). '.php';
-
 		$this->controller = new $this->controller(); # Objectify
 
 		if ( isset( $url[1] ) )
@@ -37,7 +36,7 @@ class App
 	}
 
 	# Router
-	public function parseUrl()
+	public function router()
 	{
 		if ( isset( $_GET['url'] ) )
 		{

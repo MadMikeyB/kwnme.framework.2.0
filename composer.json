@@ -6,6 +6,7 @@
         "classmap": [
 			"app/models",
             "app/core"
+            
 		],
         "files": [
             "app/database.php"

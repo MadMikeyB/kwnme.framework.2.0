@@ -38,7 +38,7 @@ class User extends Controller
 
 	public function admin()
 	{
-		$users = User::all(); // User:: not working here. :(
+		User::all(); // User:: not working here. :(
 		$this->view('User/Admin/Index', $users);
 	}
 }
