@@ -41,6 +41,26 @@ class App
 		call_user_func_array( array( $this->controller, $this->method ), $this->params );
 	}
 
+	public function checkForBase( $base )
+	{
+		require_once '../app/controllers/Url.php';
+		$url = ShortUrl::findByBase($base);
+
+		if ( !$url )
+		{
+			$slug = ShortUrl::findBySlug( $base );
+			if ( $slug )
+			{
+				Url::forward($slug);
+			}
+		}
+
+		if ( $url )
+		{
+			Url::forward($base);
+		}
+	}
+
 	# Error Handler
 	public function initWhoopsErrorHandler()
 	{
@@ -57,7 +77,11 @@ class App
 	{
 		if ( isset( $_GET['url'] ) )
 		{
-			return $url = explode( '/', filter_var( rtrim( $_GET['url'], '/'), FILTER_SANITIZE_URL ) );
+			$url = explode( '/', filter_var( rtrim( $_GET['url'], '/'), FILTER_SANITIZE_URL ) );
+			if ( !$this->checkForBase( $url[0] ) )
+			{
+				return $url;
+			}	
 		}
 	}
 }

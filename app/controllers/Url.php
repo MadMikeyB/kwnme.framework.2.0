@@ -46,7 +46,7 @@ class Url extends Controller
 		}
 	}
 
-	public function forward( $base='' )
+	public static function forward( $base='' )
 	{
 		if ( $base )
 		{
@@ -58,7 +58,7 @@ class Url extends Controller
 				$clicks->lastvisiteddon = time();
 				$clicks->save();
 
-				$this->redirect( $url->url );
+				parent::redirect( $url->url );
 			}
 			else
 			{
@@ -69,18 +69,18 @@ class Url extends Controller
 					$clicks->lastvisiteddon = time();
 					$clicks->save();
 				
-					$this->redirect( $slug->url );
+					parent::redirect( $slug->url );
 
 				}	
 				else
 				{
-					$this->view('Error/Error', 'Invalid Slug');
+					parent::view('Error/Error', 'Invalid Slug');
 				}
 			}
 		}
 		else
 		{
-			$this->view('Error/Error', 'No URL to redirect to.');
+			parent::view('Error/Error', 'No URL to redirect to.');
 		}
 	}
 
