@@ -17,4 +17,9 @@ class ShortUrl extends Eloquent
 		return $url;
 	}
 
+	public static function findBySlug( $slug='' )
+	{
+		$url = ShortUrl::where('slug', '=', $slug)->first();
+		return $url;
+	}
 }

@@ -36,7 +36,7 @@ class Controller
 		}
 	}
 
-	public function redirect( $url, $newtab, $code='302' )
+	public function redirect( $url, $code='307' ) // Using http response code 307 as URL Redirect may be altered for spam purposes. 302 is lending too much credence to the redirect. @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
 	{
 		header( 'Location: '. $url, $code );
 		exit;

@@ -48,20 +48,39 @@ class Url extends Controller
 
 	public function forward( $base='' )
 	{
-
-		$url = ShortUrl::findByBase($base);
-		if ( $url )
+		if ( $base )
 		{
-			$clicks = new ShortUrl;
-			$clicks->clickcount = $url->clickcount+1;
-			$clicks->lastvisiteddon = time();
-			$clicks->save();
+			$url = ShortUrl::findByBase($base);
+			if ( $url )
+			{
+				$clicks = new ShortUrl;
+				$clicks->clickcount = $url->clickcount+1;
+				$clicks->lastvisiteddon = time();
+				$clicks->save();
 
-			$this->redirect( $url->url, 'true' );
+				$this->redirect( $url->url );
+			}
+			else
+			{
+				if ( $slug = ShortUrl::findBySlug($base) )
+				{
+					$clicks = new ShortUrl;
+					$clicks->clickcount = $slug->clickcount+1;
+					$clicks->lastvisiteddon = time();
+					$clicks->save();
+				
+					$this->redirect( $slug->url );
+
+				}	
+				else
+				{
+					$this->view('Error/Error', 'Invalid Slug');
+				}
+			}
 		}
 		else
 		{
-			$this->view('Error/Error', 'Invalid Slug');
+			$this->view('Error/Error', 'No URL to redirect to.');
 		}
 	}
 
