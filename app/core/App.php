@@ -1,5 +1,8 @@
 <?php
 
+use Whoops\Run as WhoopsRun;
+use Whoops\Handler\PrettyPageHandler as WhoopsPrettyPageHandler;
+
 class App
 {
 	# Set defaults
@@ -11,6 +14,8 @@ class App
 	public function __construct()
 	{
 		$url = self::router();
+
+		$this->initWhoopsErrorHandler();
 
 		if ( file_exists( '../app/controllers/' . ucfirst( $url[0] ) . '.php' ) ) # Can we use class_exists?
 		{
@@ -33,6 +38,17 @@ class App
 		$this->params = $url ? array_values($url) : array();
 
 		call_user_func_array( array( $this->controller, $this->method ), $this->params );
+	}
+
+	# Error Handler
+	public function initWhoopsErrorHandler()
+	{
+		$whoops = new WhoopsRun();
+		$handler = new WhoopsPrettyPageHandler();
+
+		$whoops->pushHandler($handler)->register();
+
+		return $this;
 	}
 
 	# Router

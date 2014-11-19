@@ -10,4 +10,7 @@ return array(
     'Controller' => $baseDir . '/app/core/Controller.php',
     'Url' => $baseDir . '/app/models/Url.php',
     'User' => $baseDir . '/app/models/User.php',
+    'Whoops\\Module' => $vendorDir . '/filp/whoops/src/deprecated/Zend/Module.php',
+    'Whoops\\Provider\\Zend\\ExceptionStrategy' => $vendorDir . '/filp/whoops/src/deprecated/Zend/ExceptionStrategy.php',
+    'Whoops\\Provider\\Zend\\RouteNotFoundStrategy' => $vendorDir . '/filp/whoops/src/deprecated/Zend/RouteNotFoundStrategy.php',
 );
