@@ -15,14 +15,26 @@ class Url extends Controller
 			}
 			else
 			{
-				$shortUrl = new Url();
-				$shortUrl->url = $input['url'];
-				$shortUrl->slug = isset( $input['slug'] ) ? $input['slug'] : NULL;
-				$shortUrl->userIP = $_SERVER['REMOTE_ADDR'];
-				$shortUrl->save();
+				if ( !empty( $input['slug'] ) )
+				{
+					$slug = $input['slug'];
+				}
+				else
+				{
+					$slug = NULL;
+				}
 
-				$shortUrl->base = base_convert($shortUrl->id, 12, 32);
-				$shortUrl->update();
+				$maxId = ShortUrl::max('id');
+				$base = base_convert($maxId+1, 12, 32);
+
+
+				$shortUrl = new ShortUrl;
+				$shortUrl->url = $input['url'];
+				$shortUrl->slug = $slug;
+				$shortUrl->base = $base;
+				$shortUrl->userIP = $_SERVER['REMOTE_ADDR'];
+				$shortUrl->clickcount = '1';
+				$shortUrl->save();
 
 				$this->view('Url/Result', $shortUrl);
 			}
@@ -34,17 +46,18 @@ class Url extends Controller
 		}
 	}
 
-	public function forward( $url='' )
+	public function forward( $base='' )
 	{
-		$_url = Url::where( 'url', '=', $url );
-		if ( $_url )
+
+		$url = ShortUrl::findByBase($base);
+		if ( $url )
 		{
-			$clicks = new Url();
-			$clicks->clickcount = $_url->clickount +1;
-			$clicks->lastvisited = time();
+			$clicks = new ShortUrl;
+			$clicks->clickcount = $url->clickcount+1;
+			$clicks->lastvisiteddon = time();
 			$clicks->save();
 
-			$this->redirect( $_url->url );
+			$this->redirect( $url->url, 'true' );
 		}
 		else
 		{

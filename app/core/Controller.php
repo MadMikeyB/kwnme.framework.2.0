@@ -36,7 +36,7 @@ class Controller
 		}
 	}
 
-	public function redirect( $url, $code='302' )
+	public function redirect( $url, $newtab, $code='302' )
 	{
 		header( 'Location: '. $url, $code );
 		exit;
