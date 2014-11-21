@@ -26,7 +26,12 @@
 
 </script>
 <br />
+<?php if ( $user = Auth::check( @$_COOKIE['user'] ) ): ?>
+		<div class="kwnlogin">[Welcome back, <a href="user"><?php echo $user->username ?></a>!]</div><br />
+<?php else: ?>
 		<div class="kwnlogin"><a href="user">[Login]</a>, or <a href="user/create">[Register]</a></div><br />
+<?php endif; ?>
+
 </div>
 
 	<article class="box">

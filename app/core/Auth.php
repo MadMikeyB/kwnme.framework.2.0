@@ -3,8 +3,18 @@
 class Auth 
 {
 
-	//public static $user;
+	public static $user;
 	public static $password;
+
+	/**
+	 *	Constructor
+	 *	@return null
+	 **/
+
+	public function __construct()
+	{
+		//$this->user = User::where( 'auth_token', '=', $_SESSION['auth_token'] );
+	}
 
 	/**
 	 *	Attempt authentication
@@ -19,9 +29,16 @@ class Auth
 		if ( password_verify( $password, $user->password ) )
 		{
 			$_SESSION['loggedin'] = '1';
-			$_SESSION['userid'] = $user->id;
-			# @todo AUTH TOKEN
-			dd($_SESSION);
+			$_SESSION['auth_token']	= $user->auth_token;
+			setcookie('user', $user, time()+60*60*24*30);
+			setcookie('loggedin', '1', time()+60*60*24*30);
+			setcookie('auth_token', $user->auth_token, time()+60*60*24*30);
+			return true;
+		}
+		else
+		{
+			return false;
+			//Controller::view('Error/Error', 'The email address or password does not match what we have. Remember that passwords are case sensitive. <br /><br /><a href="user/login">Go back</a>');
 		}
 
 	}
@@ -33,7 +50,36 @@ class Auth
 
 	public static function check( $user )
 	{
+		$user = json_decode($user); // Objectify!
 
+		if ( @$_COOKIE['loggedin'] == '1' )
+		{
+			$check_user = KwnUser::where( 'auth_token', '=', $user->auth_token )->first();
+			if ( empty( $check_user ) )
+			{
+				$check_user = KwnUser::where( 'auth_token', '=', $_SESSION['auth_token'] )->first();
+				
+				if ( $check_user )
+				{
+					return $check_user;
+				}
+				else
+				{
+					return false;
+				}
+			}
+			else
+			{
+				return $check_user;
+			}
+		}
+		else
+		{
+			// destroy session, unset cookies, throw error.
+			self::destroy();
+			// Controller::view('Error/Error', "Auth token mismatch. You have been logged out. Please <a href='user/login'>re log in.</a>")
+			return false;
+		}
 	}
 
 	/**
@@ -41,9 +87,16 @@ class Auth
 	 *	@return null
 	 **/
 
-	public static function destroy( $user='' )
+	public static function destroy()
 	{
-
+		if ( $_SESSION )
+		{
+			unset($_SESSION['loggedin']);
+			unset($_SESSION['auth_token']);
+			session_destroy();
+			setcookie('loggedin', '', time()+60*60*24*30);
+			setcookie('auth_token', '', time()+60*60*24*30);
+		}
 	}
 
 

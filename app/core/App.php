@@ -14,6 +14,7 @@ class App
 	# Constructor
 	public function __construct()
 	{
+		session_start();
 		$url = self::router();
 
 		$this->initWhoopsErrorHandler();
