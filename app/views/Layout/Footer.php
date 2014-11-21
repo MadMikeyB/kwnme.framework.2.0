@@ -1,12 +1,12 @@
 <!-- footer/ --><div align="center" class="footertxt">
 Drag this <a class="bookmarklet"  href="javascript:(function(){ window.open('http://kwn.me/b.php?process=1&url='+escape(location.href)+'&title='+escape(document.title)); })()" title="Share with kwn.me">bookmarklet</a> into your bookmarks toolbar, and click it on any site (other than this one) for easier shortening.<br /><br />kwn.me is not responsible for misuse of the service provided.<br />
     	<a href="http://kwn.me">Home</a> | 
-	<a href="http://kwn.me/about">About</a> | 
-	<a href="http://kwn.me/docs">Docs</a> | 
-	<a href="http://kwn.me/features">Features</a> | 
-	<a href="http://kwn.me/contact">Contact</a> |
+	<a href="http://kwn.me/page/about">About</a> | 
+	<a href="http://kwn.me/page/docs">Docs</a> | 
+	<a href="http://kwn.me/page/features">Features</a> | 
+	<a href="http://kwn.me/page/contact">Contact</a> |
     <a href="http://kwn.me/dl/Kwn.me Extension.crx">Chrome Extension</a><br />
-     	Copyright &copy; 2009-2012 kwn.me 
+     	Copyright &copy; 2009-<?php date('Y') ?>kwn.me 
 		<br /><!-- &lt;3 <a href="http://kwn.me/3">Mikey</a> &amp; <a href="http://kwn.me/4">Chroder</a> &amp; <a href="http://kwn.me/15">Floris</a> :) -->  <a href="http://www.ie6nomore.com/" target="_blank" style="a:hover:none;">&lt;/3 Internet Explorer</a> :(
 </div><!-- /footer -->
 <!-- Google Analytics/ -->

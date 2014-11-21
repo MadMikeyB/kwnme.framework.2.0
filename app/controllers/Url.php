@@ -46,6 +46,12 @@ class Url extends Controller
 		}
 	}
 
+	# Bookmarklet
+	public function shorten( $url )
+	{
+
+	}
+
 	public static function forward( $base='' )
 	{
 		if ( $base )

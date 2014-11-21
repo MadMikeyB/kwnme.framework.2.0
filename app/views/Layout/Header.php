@@ -6,7 +6,7 @@
 <title>Shorten URL's with kwn.me</title>
 <!--<script src="http://code.jquery.com/jquery.min.js"></script>-->
 <!--<script src="http://platform.twitter.com/anywhere.js?id=BWymIIpxyR11vwSx9lL8JQ&v=1" type="text/javascript"></script>-->
-<link rel="stylesheet" href="/kwnme/public/css/kwn.me.css" />
+<link rel="stylesheet" href="http://kwn.me/css/kwn.me.css" />
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="/kwnme/public/favicon.ico" rel="icon" type="image/x-icon" />
