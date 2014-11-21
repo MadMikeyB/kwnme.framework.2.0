@@ -10,6 +10,7 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="/kwnme/public/favicon.ico" rel="icon" type="image/x-icon" />
+<base href="http://localhost/kwnme/public/" /> <?php // Config::$url ?>
 <meta name="generator" content="http://switchtohtml5.com">
 </head>
 <body>
@@ -25,7 +26,7 @@
 
 </script>
 <br />
-		<div class="kwnlogin"><a href="user">[Login]</a>, or <a href="user/register">[Register]</a></div><br />
+		<div class="kwnlogin"><a href="user">[Login]</a>, or <a href="user/create">[Register]</a></div><br />
 </div>
 
 	<article class="box">

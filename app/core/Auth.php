@@ -3,7 +3,8 @@
 class Auth 
 {
 
-	public static $user;
+	//public static $user;
+	public static $password;
 
 	/**
 	 *	Attempt authentication
@@ -11,10 +12,18 @@ class Auth
 	 *	@return boolean
 	 **/
 
-	public static function attempt( $username, $password, $remember )
+	public static function attempt( $email, $password, $remember )
 	{
-		$user = KwnUser::where( 'username', '=', $username )->get();
-		dd($user);
+		$user = KwnUser::where( 'email', '=', $email )->first();
+
+		if ( password_verify( $password, $user->password ) )
+		{
+			$_SESSION['loggedin'] = '1';
+			$_SESSION['userid'] = $user->id;
+			# @todo AUTH TOKEN
+			dd($_SESSION);
+		}
+
 	}
 
 	/**

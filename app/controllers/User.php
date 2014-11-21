@@ -20,6 +20,8 @@ class User extends Controller
 			{
 				$remember = true;
 			}
+
+
 			Auth::attempt( $input['email'], $input['password'],  $remember );
 		}
 		else
@@ -37,8 +39,8 @@ class User extends Controller
 					array(
 							'username' 	=> $input['username'],
 							'email'		=> $input['email'],
-							'password'	=> password_hash($input['password'], PASSWORD_BCRYPT/*, Config::$salt*/),
-							'group_id'	=> '1'
+							'password'	=> password_hash($input['password'], PASSWORD_BCRYPT ),
+							'group_id'	=> '1',
 					)
 			);
 
