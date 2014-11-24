@@ -59,9 +59,10 @@ class Url extends Controller
 			$url = ShortUrl::findByBase($base);
 			if ( $url )
 			{
-				$clicks = new ShortUrl;
+				$clicks = ShortUrl::find($url->id);
 				$clicks->clickcount = $url->clickcount+1;
-				$clicks->lastvisiteddon = time();
+				$clicks->createdon = $url->createdon;
+				$clicks->lastvisiteddon = date('Y-m-d H:i:s');
 				$clicks->save();
 
 				parent::redirect( $url->url );

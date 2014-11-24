@@ -89,13 +89,13 @@ class Auth
 
 	public static function destroy()
 	{
-		if ( $_SESSION )
+		if ( @$_SESSION )
 		{
 			unset($_SESSION['loggedin']);
 			unset($_SESSION['auth_token']);
 			session_destroy();
-			setcookie('loggedin', '', time()+60*60*24*30);
-			setcookie('auth_token', '', time()+60*60*24*30);
+			//setcookie('loggedin', '', time()+60*60*24*30);
+			//setcookie('auth_token', '', time()+60*60*24*30);
 		}
 	}
 

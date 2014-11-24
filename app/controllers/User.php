@@ -78,7 +78,7 @@ class User extends Controller
 	public function logout()
 	{
 		Auth::destroy();
-		$this->redirect('/');
+		$this->redirect('url');
 	}
 
 	public function admin()
