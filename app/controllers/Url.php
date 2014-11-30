@@ -27,16 +27,22 @@ class Url extends Controller
 				$maxId = ShortUrl::max('id');
 				$base = base_convert($maxId+1, 12, 32);
 
+				if (  !ShortUrl::findBySlug( $slug ) )
+				{
+					$shortUrl = new ShortUrl;
+					$shortUrl->url = $input['url'];
+					$shortUrl->slug = $slug;
+					$shortUrl->base = $base;
+					$shortUrl->userIP = $_SERVER['REMOTE_ADDR'];
+					$shortUrl->clickcount = '1';
+					$shortUrl->save();
 
-				$shortUrl = new ShortUrl;
-				$shortUrl->url = $input['url'];
-				$shortUrl->slug = $slug;
-				$shortUrl->base = $base;
-				$shortUrl->userIP = $_SERVER['REMOTE_ADDR'];
-				$shortUrl->clickcount = '1';
-				$shortUrl->save();
-
-				$this->view('Url/Result', $shortUrl);
+					$this->view('Url/Result', $shortUrl);
+				}
+				else
+				{
+					$this->view('Error/Error', 'Slug already in use.');
+				}
 			}
 
 		}
