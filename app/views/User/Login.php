@@ -1,5 +1,5 @@
 <h2>Log In</h2>
-<form role="form" action="/kwnme/public/user/login" method="POST">
+<form role="form" action="user/login" method="POST">
   <div class="form-group">
     <label for="email">Email address:</label>
     <input type="email" class="form-control" id="email" name="email">

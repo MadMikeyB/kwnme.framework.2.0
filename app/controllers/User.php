@@ -12,6 +12,7 @@ class User extends Controller
 
 	public function login()
 	{
+		setcookie('user', '0');
 		$input = $_POST;
 		$remember = false;		
 		if ( $input )
@@ -34,6 +35,7 @@ class User extends Controller
 		{
 			if ( $user = Auth::check( $_COOKIE['user'] ) )
 			{
+				//dd($user);
 				$this->view('User/Dashboard', $user);
 			}
 			else
@@ -49,7 +51,7 @@ class User extends Controller
 		if ( $input )
 		{
 			$auth_token = base64_encode(
-									    join(
+										join(
 									        '',
 									        array_map(
 									            function($x){ return chr(mt_rand(1,255));},

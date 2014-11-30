@@ -26,19 +26,27 @@ class Auth
 	{
 		$user = KwnUser::where( 'email', '=', $email )->first();
 
-		if ( password_verify( $password, $user->password ) )
+		if ( $user )
 		{
-			$_SESSION['loggedin'] = '1';
-			$_SESSION['auth_token']	= $user->auth_token;
-			setcookie('user', $user, time()+60*60*24*30);
-			setcookie('loggedin', '1', time()+60*60*24*30);
-			setcookie('auth_token', $user->auth_token, time()+60*60*24*30);
-			return true;
+			if ( password_verify( $password, $user->password ) )
+			{
+				$_SESSION['loggedin'] = '1';
+				$_SESSION['auth_token']	= $user->auth_token;
+				setcookie('user', $user, time()+60*60*24*30);
+				setcookie('loggedin', '1', time()+60*60*24*30);
+				setcookie('auth_token', $user->auth_token, time()+60*60*24*30);
+				return true;
+			}
+			else
+			{
+				return false;
+				//Controller::view('Error/Error', 'The email address or password does not match what we have. Remember that passwords are case sensitive. <br /><br /><a href="user/login">Go back</a>');
+			}
+
 		}
 		else
 		{
 			return false;
-			//Controller::view('Error/Error', 'The email address or password does not match what we have. Remember that passwords are case sensitive. <br /><br /><a href="user/login">Go back</a>');
 		}
 
 	}
