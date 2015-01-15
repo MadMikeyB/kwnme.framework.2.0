@@ -27,22 +27,26 @@ class Url extends Controller
 				$maxId = ShortUrl::max('id');
 				$base = base_convert($maxId+1, 12, 32);
 
-				if (  !ShortUrl::findBySlug( $slug ) )
+				if ( $slug !== NULL )
 				{
-					$shortUrl = new ShortUrl;
-					$shortUrl->url = $input['url'];
-					$shortUrl->slug = $slug;
-					$shortUrl->base = $base;
-					$shortUrl->userIP = $_SERVER['REMOTE_ADDR'];
-					$shortUrl->clickcount = '1';
-					$shortUrl->save();
+					$slugCheck = ShortUrl::findBySlug( $slug );
+					//echo '<xmp>'; print_r($slugCheck->slug); exit;
+					if ( $slugCheck )
+					{
+						$this->view('Error/Error', 'Slug already in use.');
+					}
+				}
 
-					$this->view('Url/Result', $shortUrl);
-				}
-				else
-				{
-					$this->view('Error/Error', 'Slug already in use.');
-				}
+				$shortUrl = new ShortUrl;
+				$shortUrl->url = $input['url'];
+				$shortUrl->slug = $slug;
+				$shortUrl->base = $base;
+				$shortUrl->userIP = $_SERVER['REMOTE_ADDR'];
+				$shortUrl->clickcount = '1';
+				$shortUrl->save();
+				
+				$this->view('Url/Result', $shortUrl);
+			
 			}
 
 		}
@@ -60,36 +64,27 @@ class Url extends Controller
 
 	public static function forward( $base='' )
 	{
-		if ( $base )
+		// URL
+		if ( $url = ShortUrl::findByBase($base) )
 		{
-			$url = ShortUrl::findByBase($base);
-			if ( $url )
-			{
-				$clicks = ShortUrl::find($url->id);
-				$clicks->clickcount = $url->clickcount+1;
-				$clicks->createdon = $url->createdon;
-				$clicks->lastvisiteddon = date('Y-m-d H:i:s');
-				$clicks->save();
+			$clicks = ShortUrl::find($url->id);
+			$clicks->clickcount = $url->clickcount+1;
+			$clicks->createdon = $url->createdon;
+			$clicks->lastvisiteddon = date('Y-m-d H:i:s');				
+			$clicks->save();
 
-				parent::redirect( $url->url );
-			}
-			else
-			{
-				if ( $slug = ShortUrl::findBySlug($base) )
-				{
-					$clicks = new ShortUrl;
-					$clicks->clickcount = $slug->clickcount+1;
-					$clicks->lastvisiteddon = time();
-					$clicks->save();
-				
-					parent::redirect( $slug->url );
+			parent::redirect( $url->url );		
+		}
+		// Slug
+		else if ( $base->url )
+		{
+			$clicks = ShortUrl::find($base->id);
+			$clicks->clickcount = $base->clickcount+1;
+			$clicks->createdon = $base->createdon;
+			$clicks->lastvisiteddon = date('Y-m-d H:i:s');				
+			$clicks->save();
 
-				}	
-				else
-				{
-					parent::view('Error/Error', 'Invalid Slug');
-				}
-			}
+			parent::redirect( $base->url );
 		}
 		else
 		{
