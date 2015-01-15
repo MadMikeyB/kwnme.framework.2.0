@@ -10,25 +10,42 @@ text-transform:uppercase;
 } */
 
 html {
-z-index:1}
+	z-index:1
+}
+
 body {
 	font-family: Arial, Helvetica, MS Trebuchet, sans-serif;
 }
 
-img { border: none; }
-a { color: #666 !important; text-decoration: none; }
-a:hover { text-decoration: underline; color : #000; }
-highlight { font-size:large; color : #CD0000; }
+img { 
+	border: none; 
+}
+
+a { 
+	color: #666 !important; 
+	text-decoration: none; 
+}
+
+a:hover { 
+	text-decoration: underline; 
+	color : #000; 
+}
+
+highlight { 
+	font-size:large; 
+	color : #CD0000; 
+}
 
 /* CLASSES */
 .info {
-	background: url(/web/20130924024037/http://kwn.me/img/info.png) no-repeat left;
 	padding-left: 8px;
 	text-decoration: none;
 }
+
 a.info:hover {
 	text-decoration: none;
 }
+
 .box {
 	width: 620px;
 	margin: 0 auto;
@@ -50,7 +67,7 @@ a.info:hover {
 	height:45px;
 	color:#999;
 	border:1px solid #999;
-	font-size:large; /* not valid mikey -Floris */
+	font-size:20px; 
 	line-height:1.5em;
 }
 
@@ -59,7 +76,7 @@ a.info:hover {
 	height:35px;
 	color:#999;
 	border:1px solid #999;
-	font-size:small; /* not valid mikey -Floris */
+	font-size:12px; 
 	line-height:1.5em;
 }
 
@@ -77,6 +94,7 @@ a.info:hover {
 	color: #999;
 	font: 12px Arial, Helvetica, Trebuchet MS, Verdana, sans-serif;
 }
+
 .bookmarklet {
 	text-decoration: none;
 	font-weight: bold;
@@ -88,6 +106,7 @@ a.info:hover {
 	border-radius: 4px;
 	cursor: move;
 }
+
 a.bookmarklet:hover {
 	text-decoration: none;
 }
@@ -103,7 +122,7 @@ a.bookmarklet:hover {
 	filter: dropshadow(color=#fff, offx=1, offy=1);
 }
 
-.ad{
+.ad {
 	-webkit-box-shadow: 1px 1px 12px #c1c2d4;
 	-moz-box-shadow: 1px 1px 12px #c1c2d4;
 	box-shadow: 1px 1px 12px #c1c2d4;
@@ -113,10 +132,18 @@ a.bookmarklet:hover {
 
 /* IDs */
 
-#expand{opacity: 0.3;-webkit-transition: all 200ms linear; border:0 none}
-#expand:hover{solid;opacity: 1;}
+#expand {
+	opacity: 0.3;
+	-webkit-transition: all 200ms linear; 
+	border:0 none;
+}
+
+#expand:hover {
+	solid;opacity: 1;
+}
 
 #floris { /* awesome */ }
+
 #mikey { /* almost as awesome */ }
 
 
@@ -130,21 +157,25 @@ dl {
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 }
+
 dl, dt {
 	margin: 0;
 	padding: 0;	
 	display: block;
 	float: left;	
 }
+
 dd, dt {
 	padding: 3px;
 	text-align: left;
 }
+
 dt {
 	width: 200px;
 	padding-left: 12px;
 
 }
+
 dd {
 	display: block;
 	margin-left: 200px;
@@ -155,25 +186,31 @@ dd {
 	padding-right: 6px;
 	padding-left: 12px;
 }
+
 .grey1 {
 	background-color: #DDD;
 }
+
 .grey2 {
 	background-color: #eee;
 }
+
 .h1stats {
 	font-weight: normal;
 	font-family: Arial, MS Trebuchet, sans-serif;
 }
+
 #boxshadow {
 	-webkit-box-shadow: 1px 1px 12px #999;
 	-moz-box-shadow: 1px 1px 12px #999;
 	box-shadow: 1px 1px 12px #999;
 }
+
 /* admin/manage.php .PNG icons, down a bit */
 .dabit {
 	float:right;
 }
+
 .dabit img {
 	border: 0 none;
 }
@@ -218,6 +255,7 @@ dd {
 				     1px -1px 3px yellow*/; 
 
 }
+
 .account_text {
 	background-color: #eee;
 	padding: 12px;
@@ -238,6 +276,7 @@ dd {
 	-moz-box-shadow: 0px 0px 4px #0d1930;
 	box-shadow: 0px 0px 4px #0d1930;
 }
+
 .account_form {
 	background-color: #fff;
 	padding: 12px;
@@ -258,6 +297,7 @@ dd {
 	-moz-box-shadow: 0px 0px 4px #0d1930;
 	box-shadow: 0px 0px 4px #0d1930;
 }
+
 .box #login {
 	width:150px;
 	height:34px;
@@ -267,6 +307,7 @@ dd {
 	margin: 12px 0px 4px 0px;
 	background: #ccc;
 }
+
 .box #register {
 	width:150px;
 	height:34px;
@@ -280,10 +321,12 @@ dd {
 .account_form label {
 position: absolute;
 }
-.account_form input[type=\\\\\\\\\\\\\\\"text\\\\\\\\\\\\\\\"], form input[type=\\\\\\\\\\\\\\\"password\\\\\\\\\\\\\\\"] {
+
+.account_form input[type="text"], form input[type="password"] {
 	position: relative;
 	left: 95px;
 }
+
 .account_form fieldset {
 	-webkit-border-top-left-radius: 3px;
 	-webkit-border-top-right-radius: 13px;
@@ -298,9 +341,11 @@ position: absolute;
 	border-bottom-right-radius: 3px;
 	border-bottom-left-radius: 13px;
 }
+
 .account_form legend {
 	color: #003366;
 }
+
 .account_button {
     display: inline-block;
     margin: 20px;
@@ -348,50 +393,52 @@ position: absolute;
 }
 
 .smalltxt {
-font-family:Verdana;
-letter-spacing:-1px;
-font-size:9pt;
+	font-family:Verdana;
+	letter-spacing:-1px;
+	font-size:9pt;
 }
 
 .kwnlogin {
-font-family:Verdana;
-letter-spacing:-1px;
-font-size:11pt;
+	font-family:Verdana;
+	letter-spacing:-1px;
+	font-size:11pt;
 }
 
 .idxstats {
-vertical-align:bottom;
-margin-top:50px;
-color:#999;
-font-size:small;
-font-family:arial;
+	vertical-align:bottom;
+	margin-top:50px;
+	color:#999;
+	font-size:small;
+	font-family:arial;
 }
 
 .footertxt {
-vertical-align:bottom;
-margin-top:30px;
-color:#999;
-font-size:xx-small;
-font-family:arial;
+	vertical-align:bottom;
+	margin-top:30px;
+	color:#999;
+	font-size:xx-small;
+	font-family:arial;
 }
 
 .kwnloginbox {
-position:absolute;
-top:10px;
-right:15px;
+	position:absolute;
+	top:10px;
+	right:15px;
 }
 
 .right {
-float:right;
+	float:right;
 }
+
 .bkmarkletbox {
-font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
-margin:0 auto;
+	font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
+	margin:0 auto;
 }
+
 .bkmarkletbox h1 {
-color:#444;
-font-size:20px;
-float:left;
+	color:#444;
+	font-size:20px;
+	float:left;
 }
 
 /* selection */
@@ -400,57 +447,15 @@ div.idxstats::selection, div.kwnlogin::selection, .footerstats::selection, .opti
 
 html::-moz-selection, body::-moz-selection, .box::-moz-selection, input::-moz-selection, p::-moz-selection, highlight::-moz-selection, a::-moz-selection, .footerstats::-moz-selection, div.footertxt::-moz-selection, img::-moz-selection, div.idxstats::-moz-selection, div.kwnlogin::-moz-selection, .optional::-moz-selection { background:  #fff2a8; }
 
-/* mikey logo 
-
-.logo {
-margin-top:-65px;
-padding-bottom:25px;
-opacity: .45;
-background:url(/web/20130924024037/http://offtopichut.com/uploads/gallery/album_7/med_gallery_1_7_40460.png) top left;
-background-width:610px;
-height:245px;
-}
-
-.logo:hover {
-opacity:1;
-}*/
-
-
-
 .idxstats::before {
-position:absolute;
-left:15%;
-right:15%;
-bottom:5%;
-font-weight:bold;
-font-size:62pt;
-content: "kwn.me/support";
-color:#444;
-margin-bottom:15%;
-z-index:-1
+	position:absolute;
+	left:15%;
+	right:15%;
+	bottom:5%;
+	font-weight:bold;
+	font-size:62pt;
+	content: "kwn.me/support";
+	color:#444;
+	margin-bottom:15%;
+	z-index:-1
 }
-/**
-.logo::before {
-position:absolute;
-left:15%;
-right:25%;
-top:1%;
-font-weight:bold;
-font-size:62pt;
-content: "kwn.me/support";
-color:#444;
-margin-bottom:15%;
-z-index:-1
-}
-.logo::after {
-content:"";
-position:absolute;
-left:40%;
-right:40%;
-top:85%;
-font-weight:bold;
-font-size:26pt;
-color:#444;
-margin-bottom:5%;
-z-index:-1
-} **/
