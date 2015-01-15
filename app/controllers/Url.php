@@ -30,7 +30,7 @@ class Url extends Controller
 				if ( $slug !== NULL )
 				{
 					$slugCheck = ShortUrl::findBySlug( $slug );
-					//echo '<xmp>'; print_r($slugCheck->slug); exit;
+
 					if ( $slugCheck )
 					{
 						$this->view('Error/Error', 'Slug already in use.');
