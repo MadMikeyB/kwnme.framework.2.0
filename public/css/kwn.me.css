@@ -459,3 +459,9 @@ html::-moz-selection, body::-moz-selection, .box::-moz-selection, input::-moz-se
 	margin-bottom:15%;
 	z-index:-1
 }
+
+/* Spam Check */
+
+.optional-field {
+	display:none;
+}

@@ -11,6 +11,7 @@ return array(
     'Controller' => $baseDir . '/app/core/Controller.php',
     'KwnUser' => $baseDir . '/app/models/KwnUser.php',
     'ShortUrl' => $baseDir . '/app/models/ShortUrl.php',
+    'SpamCheck' => $baseDir . '/app/models/SpamCheck.php',
     'Whoops\\Module' => $vendorDir . '/filp/whoops/src/deprecated/Zend/Module.php',
     'Whoops\\Provider\\Zend\\ExceptionStrategy' => $vendorDir . '/filp/whoops/src/deprecated/Zend/ExceptionStrategy.php',
     'Whoops\\Provider\\Zend\\RouteNotFoundStrategy' => $vendorDir . '/filp/whoops/src/deprecated/Zend/RouteNotFoundStrategy.php',
