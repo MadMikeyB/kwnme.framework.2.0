@@ -15,6 +15,6 @@
     <div class="checkbox">
     	<label><input type="checkbox" name="tnc" required> I agree to the <a href="/kwnme/public/page/terms">Terms &amp; Conditions</a></label>
 	</div>
-	<button type="submit" class="btn btn-default pull-right">Sign Up</button>
+	<button type="submit" class="btn btn-primary pull-right">Sign Up</button>
 </form>
 <div class="clear clearfix"></div>

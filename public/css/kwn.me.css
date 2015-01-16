@@ -318,6 +318,7 @@ dd {
 	background: #ccc;
 }
 
+/**
 .account_form label {
 position: absolute;
 }
@@ -391,6 +392,7 @@ position: absolute;
 
     text-shadow: rgba(255, 255, 255, 0.3) 0px 1px;
 }
+**/
 
 .smalltxt {
 	font-family:Verdana;
