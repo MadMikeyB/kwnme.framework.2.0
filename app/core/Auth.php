@@ -35,7 +35,7 @@ class Auth
 				setcookie('user', $user, time()+60*60*24*30);
 				setcookie('loggedin', '1', time()+60*60*24*30);
 				setcookie('auth_token', $user->auth_token, time()+60*60*24*30);
-				return true;
+				return $user;
 			}
 			else
 			{
@@ -60,32 +60,40 @@ class Auth
 	{
 		$user = json_decode($user); // Objectify!
 
-		if ( @$_COOKIE['loggedin'] == '1' )
+		if ( $user !== 0 )
 		{
-			$check_user = KwnUser::where( 'auth_token', '=', $user->auth_token )->first();
-			if ( empty( $check_user ) )
+			if ( @$_COOKIE['loggedin'] == '1' )
 			{
-				$check_user = KwnUser::where( 'auth_token', '=', $_SESSION['auth_token'] )->first();
-				
-				if ( $check_user )
+				$check_user = KwnUser::where( 'auth_token', '=', $user->auth_token )->first();
+				if ( empty( $check_user ) )
 				{
-					return $check_user;
+					$check_user = KwnUser::where( 'auth_token', '=', $_SESSION['auth_token'] )->first();
+					
+					if ( $check_user )
+					{
+						return $check_user;
+					}
+					else
+					{
+						return false;
+					}
 				}
 				else
 				{
-					return false;
+					return $check_user;
 				}
 			}
 			else
 			{
-				return $check_user;
+				// destroy session, unset cookies, throw error.
+				self::destroy();
+				// Controller::view('Error/Error', "Auth token mismatch. You have been logged out. Please <a href='user/login'>re log in.</a>")
+				return false;
 			}
 		}
 		else
 		{
-			// destroy session, unset cookies, throw error.
 			self::destroy();
-			// Controller::view('Error/Error', "Auth token mismatch. You have been logged out. Please <a href='user/login'>re log in.</a>")
 			return false;
 		}
 	}
@@ -97,6 +105,16 @@ class Auth
 
 	public static function destroy()
 	{
+		if ( isset($_COOKIE['user']) )
+		{
+			@setcookie('user', 0);
+		}
+	
+		if ( isset($_COOKIE['loggedin']) )
+		{
+			@setcookie('loggedin', 0);
+		}
+
 		if ( @$_SESSION )
 		{
 			unset($_SESSION['loggedin']);

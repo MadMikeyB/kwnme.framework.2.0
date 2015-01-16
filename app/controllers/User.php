@@ -12,7 +12,6 @@ class User extends Controller
 
 	public function login()
 	{
-		setcookie('user', '0');
 		$input = $_POST;
 		$remember = false;		
 		if ( $input )
@@ -35,7 +34,6 @@ class User extends Controller
 		{
 			if ( $user = Auth::check( $_COOKIE['user'] ) )
 			{
-				//dd($user);
 				$this->view('User/Dashboard', $user);
 			}
 			else
@@ -80,7 +78,7 @@ class User extends Controller
 	public function logout()
 	{
 		Auth::destroy();
-		$this->redirect('url');
+		$this->redirect('/');
 	}
 
 	public function admin()

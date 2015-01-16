@@ -13,5 +13,5 @@
 	</ul>
   </div>
 </div>
-<a href="user/logout" class="right">Log out?</a>
+<a href="/user/logout" class="right">Log out?</a>
 <div class="clear clearfix"></div>
