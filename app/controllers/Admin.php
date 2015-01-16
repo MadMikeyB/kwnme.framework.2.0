@@ -7,6 +7,15 @@ class Admin extends Controller
 		$this->view('Admin/Index');
 	}
 
+	public function pages()
+	{
+		$pages = KwnPage::all();
+		if ( $pages )
+		{
+			$this->view('Admin/Pages', $pages);
+		}
+	}
+
 	public function addPage()
 	{
 		// get input
