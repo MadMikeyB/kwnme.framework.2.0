@@ -9,6 +9,7 @@ return array(
     'App' => $baseDir . '/app/core/App.php',
     'Auth' => $baseDir . '/app/core/Auth.php',
     'Controller' => $baseDir . '/app/core/Controller.php',
+    'KwnPage' => $baseDir . '/app/models/KwnPage.php',
     'KwnUser' => $baseDir . '/app/models/KwnUser.php',
     'ShortUrl' => $baseDir . '/app/models/ShortUrl.php',
     'SpamCheck' => $baseDir . '/app/models/SpamCheck.php',

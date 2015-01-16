@@ -465,3 +465,13 @@ html::-moz-selection, body::-moz-selection, .box::-moz-selection, input::-moz-se
 .optional-field {
 	display:none;
 }
+
+input.button {
+	width: 275px;
+	height: 35px;
+	border: 1px solid #999;
+	font-size: large;
+	line-height: 1.5em;
+	margin: 12px 0px 4px 0px;
+	background: #ccc;
+}
