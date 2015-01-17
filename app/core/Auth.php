@@ -35,6 +35,7 @@ class Auth
 				setcookie('user', $user, time()+60*60*24*30);
 				setcookie('loggedin', '1', time()+60*60*24*30);
 				setcookie('auth_token', $user->auth_token, time()+60*60*24*30);
+				//dd($user);
 				return $user;
 			}
 			else

@@ -1,3 +1,11 @@
+<ul class="nav nav-pills">
+  <li role="presentation"><a href="admin">Admin</a></li>
+  <li role="presentation" class="active"><a href="admin/pages">Pages</a></li>
+  <li role="presentation"><a href="admin/users">Users</a></li>
+  <li role="presentation"><a href="admin/stats">Stats</a></li>
+  <li role="presentation"><a href="admin/urls">URL's</a></li>
+</ul>
+
 <h1>Edit Page: <?php echo $data->title ?></h1>
 
 <script src="//cdn.ckeditor.com/4.4.6/basic/ckeditor.js"></script>

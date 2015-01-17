@@ -2,6 +2,11 @@
 
 class Admin extends Controller
 {
+	public function __construct()
+	{
+		//$this->view('Error/Error', '<b>Whoops!</b><br /> Your permission level is not high enough to see this page.');
+	}
+
 	public function index()
 	{
 		$this->view('Admin/Index');
@@ -14,6 +19,15 @@ class Admin extends Controller
 		{
 			$this->view('Admin/Pages', $pages);
 		}
+	}
+
+	public function users()
+	{
+		$users = KwnUser::all();
+		if ( $users )
+		{
+			$this->view('Admin/Users', $users);
+		}	
 	}
 
 	public function addPage()

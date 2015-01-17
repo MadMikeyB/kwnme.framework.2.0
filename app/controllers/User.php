@@ -81,23 +81,4 @@ class User extends Controller
 		$this->redirect('/');
 	}
 
-	public function admin()
-	{
-		if ( $user = Auth::check( $_COOKIE['user'] ) )
-		{
-			if ( $user->group_id >= '2' )
-			{
-				$users = KwnUser::all(); 
-				$this->view('User/Admin/Index', $users);
-			}
-			else
-			{
-				$this->view('Error/Error', '<b>Whoops!</b><br /> Your permission level is not high enough to see this page.');
-			}
-		}
-		else
-		{
-			$this->redirect('user/login');
-		}
-	}
 }

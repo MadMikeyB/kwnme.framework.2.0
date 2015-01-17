@@ -477,3 +477,8 @@ input.button {
 	margin: 12px 0px 4px 0px;
 	background: #ccc;
 }
+
+.nav-pills>li.active>a {
+	color:#FFF !important;
+	background-color: #999 !important;
+}

@@ -7,8 +7,8 @@
   		<li class="list-group-item"><a href="">Shorten a URL!</a></li>
   		<li class="list-group-item"><a href="stats/home">URL Statistics</a></li>
 	<?php if ( $data->group_id >= '2' ): ?>
-  		<li class="list-group-item"><a href="user/admin">Admin &rarr; Users</a></li>
-  		<li class="list-group-item"><a href="url/admin">Admin &rarr; URL's</a></li>
+  		<li class="list-group-item"><a href="admin/users">Admin &rarr; Users</a></li>
+  		<li class="list-group-item"><a href="admin/urls">Admin &rarr; URL's</a></li>
 	<?php endif; ?>
 	</ul>
   </div>

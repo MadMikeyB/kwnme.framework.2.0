@@ -1,3 +1,11 @@
+<ul class="nav nav-pills">
+  <li role="presentation"><a href="admin">Admin</a></li>
+  <li role="presentation"><a href="admin/pages">Pages</a></li>
+  <li role="presentation" class="active"><a href="admin/users">Users</a></li>
+  <li role="presentation"><a href="admin/stats">Stats</a></li>
+  <li role="presentation"><a href="admin/urls">URL's</a></li>
+</ul>
+<a class="btn btn-default pull-right" role="button" href="http://kwn.me/admin/adduser" role="button">Add New User</a>
 <h2>Admin &rarr; Users</h2>
 <div class="panel panel-default">
 	<div class="panel-heading">All Users</div>
