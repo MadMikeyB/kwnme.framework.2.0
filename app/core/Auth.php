@@ -32,9 +32,9 @@ class Auth
 			{
 				$_SESSION['loggedin'] = '1';
 				$_SESSION['auth_token']	= $user->auth_token;
-				setcookie('user', $user, time()+60*60*24*30);
-				setcookie('loggedin', '1', time()+60*60*24*30);
-				setcookie('auth_token', $user->auth_token, time()+60*60*24*30);
+				setcookie('user', $user, time()+60*60*24*30, '/');
+				setcookie('loggedin', '1', time()+60*60*24*30, '/');
+				setcookie('auth_token', $user->auth_token, time()+60*60*24*30, '/');
 				//dd($user);
 				return $user;
 			}
@@ -87,14 +87,14 @@ class Auth
 			else
 			{
 				// destroy session, unset cookies, throw error.
-				self::destroy();
+				//self::destroy();
 				// Controller::view('Error/Error', "Auth token mismatch. You have been logged out. Please <a href='user/login'>re log in.</a>")
 				return false;
 			}
 		}
 		else
 		{
-			self::destroy();
+			//self::destroy();
 			return false;
 		}
 	}

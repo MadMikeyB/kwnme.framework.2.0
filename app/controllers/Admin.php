@@ -4,7 +4,19 @@ class Admin extends Controller
 {
 	public function __construct()
 	{
-		//$this->view('Error/Error', '<b>Whoops!</b><br /> Your permission level is not high enough to see this page.');
+		$user = Auth::check( $_COOKIE['user'] );
+
+		if ( $user )
+		{
+			if ( $user->group_id < '2')
+			{
+				$this->view('Error/Error', '<b>Whoops!</b><br /> Your permission level is not high enough to see this page.');
+			}
+		}
+		else
+		{
+			$this->view('Error/Error', '<b>Whoops!</b><br /> Your permission level is not high enough to see this page.');
+		}
 	}
 
 	public function index()

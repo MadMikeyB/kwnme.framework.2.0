@@ -13,7 +13,7 @@ class User extends Controller
 	public function login()
 	{
 		$input = $_POST;
-		$remember = false;		
+		$remember = false;	
 		if ( $input )
 		{
 			if ( isset( $input['rememberme'] ) )
