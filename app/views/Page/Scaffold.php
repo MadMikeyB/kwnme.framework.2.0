@@ -13,5 +13,5 @@ echo $data->content
 </div>
 
 <?php
-	echo '<a href="/admin/editpage/'.$data->slug.'">Edit Page</a>';
+	//echo '<a href="/admin/editpage/'.$data->slug.'">Edit Page</a>';
 ?>
