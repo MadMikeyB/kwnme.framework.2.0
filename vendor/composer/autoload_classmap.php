@@ -10,6 +10,7 @@ return array(
     'Auth' => $baseDir . '/app/core/Auth.php',
     'Controller' => $baseDir . '/app/core/Controller.php',
     'KwnPage' => $baseDir . '/app/models/KwnPage.php',
+    'KwnStats' => $baseDir . '/app/models/KwnStats.php',
     'KwnUser' => $baseDir . '/app/models/KwnUser.php',
     'ShortUrl' => $baseDir . '/app/models/ShortUrl.php',
     'SpamCheck' => $baseDir . '/app/models/SpamCheck.php',

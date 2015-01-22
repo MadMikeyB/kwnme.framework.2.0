@@ -8,7 +8,8 @@ class Stats extends Controller
 		
 		if ( !$url )
 		{
-			$this->view('Stats/IdxStats');
+			$stats = KwnStats::findTopStats();
+			$this->view('Stats/IdxStats', $stats);
 		}
 		else
 		{
