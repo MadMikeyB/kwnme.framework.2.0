@@ -63,7 +63,7 @@ class Auth
 
 		if ( $user !== 0 )
 		{
-			if ( @$_COOKIE['loggedin'] == '1' )
+			if ( isset( $_COOKIE['loggedin'] ) && ( $_COOKIE['loggedin'] == '1' ) )
 			{
 				$check_user = KwnUser::where( 'auth_token', '=', $user->auth_token )->first();
 				if ( empty( $check_user ) )
@@ -94,7 +94,7 @@ class Auth
 		}
 		else
 		{
-			//self::destroy();
+			self::destroy();
 			return false;
 		}
 	}

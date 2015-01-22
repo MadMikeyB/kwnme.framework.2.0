@@ -32,13 +32,16 @@ class User extends Controller
 		}
 		else
 		{
-			if ( $user = Auth::check( $_COOKIE['user'] ) )
+			if ( isset( $_COOKIE['user'] ) )
 			{
-				$this->view('User/Dashboard', $user);
-			}
-			else
-			{
-				$this->view('User/Login');
+				if ( $user = Auth::check( $_COOKIE['user'] ) )
+				{
+					$this->view('User/Dashboard', $user);
+				}
+				else
+				{
+					$this->view('User/Login');
+				}
 			}
 		}
 	}

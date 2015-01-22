@@ -4,7 +4,7 @@ class Admin extends Controller
 {
 	public function __construct()
 	{
-		$user = Auth::check( $_COOKIE['user'] );
+		$user = Auth::check( @$_COOKIE['user'] );
 
 		if ( $user )
 		{
