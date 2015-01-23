@@ -33,6 +33,29 @@ class Admin extends Controller
 		}
 	}
 
+	public function addSpammer( $url=null, $ip=null )
+	{
+		$input = $_POST;
+		if ( $input )
+		{
+			$info = array(
+								'url'	=> $input['url'],
+								'ip'	=> isset($input['ip'])
+							);
+			if ( !preg_match( "/(http|https):\/\/(.*?)$/i", $info['url'] ) )
+			{
+				$info['url'] = 'http://' . $info['url'];
+			}
+			
+			SpamCheck::logSpammer($info);
+		}
+		else
+		{
+			$this->view('Admin/AddSpammer', array($url, $ip) );
+		}
+
+	}
+
 	public function users()
 	{
 		$users = KwnUser::all();
