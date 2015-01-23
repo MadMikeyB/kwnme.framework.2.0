@@ -1,6 +1,6 @@
-<div class="alert alert-info" role="alert">
+<div class="alert alert-success" role="alert">
 	<i class="fa fa-bell-o"></i>
-	<strong>kwn.me</strong> is still being developed. We're now <a href="https://github.com/MadMikeyB/kwnme.framework.2.0" target="_blank" class="alert-link">open source!</a> Please report any bugs in our <a href="https://github.com/MadMikeyB/kwnme.framework.2.0/issues" target="_blank" class="alert-link">tracker</a>.
+	<strong>kwn.me</strong> is back! We're now <a href="https://github.com/MadMikeyB/kwnme.framework.2.0" target="_blank" class="alert-link">open source!</a> Please report any bugs in our <a href="https://github.com/MadMikeyB/kwnme.framework.2.0/issues" target="_blank" class="alert-link">tracker</a>.
 </div>
 
 <form role="form" method="post" action="/">
