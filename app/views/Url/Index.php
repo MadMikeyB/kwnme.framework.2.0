@@ -27,3 +27,9 @@
 	</div>
 	<p></p>
 </form>
+
+<div align="center" class="idxstats">
+	We have shortened <highlight>x</highlight> long links, and <highlight>x</highlight> are custom<br>
+	Most popular short URL is: x<br>
+	The latest short URL created is: x
+</div>

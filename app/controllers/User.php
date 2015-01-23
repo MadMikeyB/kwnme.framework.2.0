@@ -43,6 +43,10 @@ class User extends Controller
 					$this->view('User/Login');
 				}
 			}
+			else
+			{
+				$this->view('User/Login');
+			}
 		}
 	}
 
