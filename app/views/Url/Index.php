@@ -29,7 +29,7 @@
 </form>
 
 <div align="center" class="idxstats">
-	We have shortened <highlight>x</highlight> long links, and <highlight>x</highlight> are custom<br>
-	Most popular short URL is: x<br>
-	The latest short URL created is: x
+	We have shortened <highlight><?php echo KwnStats::countUrls(); ?></highlight> long links, and <highlight><?php echo KwnStats::countUrls(true); ?></highlight> are custom<br>
+	Most popular short URL is: <i class="fa fa-info-circle"></i> <?php $pop = KwnStats::mostPopularURL(); echo '<a href="http://kwn.me/'.$pop['base'].'">kwn.me/' . $pop['base'] . '</a> with <a href="http://kwn.me/stats/'.$pop['base'].'">'.$pop['clicks'] . '</a> clicks'; ?><br>
+	The latest short URL created is: <i class="fa fa-info-circle"></i> <?php $latest = KwnStats::latestURL(); echo '<a href="http://kwn.me/'.$latest.'">kwn.me/'.$latest.'</a>'; ?>
 </div>
