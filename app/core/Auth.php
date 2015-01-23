@@ -68,15 +68,18 @@ class Auth
 				$check_user = KwnUser::where( 'auth_token', '=', $user->auth_token )->first();
 				if ( empty( $check_user ) )
 				{
-					$check_user = KwnUser::where( 'auth_token', '=', $_SESSION['auth_token'] )->first();
-					
-					if ( $check_user )
+					if ( isset( $_SESSION['auth_token'] ) )
 					{
-						return $check_user;
-					}
-					else
-					{
-						return false;
+						$check_user = KwnUser::where( 'auth_token', '=', $_SESSION['auth_token'] )->first();
+						
+						if ( $check_user )
+						{
+							return $check_user;
+						}
+						else
+						{
+							return false;
+						}
 					}
 				}
 				else
