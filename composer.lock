@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e66de6cc68dd198b83becaf0b27d55f7",
+    "hash": "4be727d8390fcf7301583b2356566db6",
     "packages": [
         {
             "name": "filp/whoops",
@@ -66,17 +66,17 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v4.2.9",
+            "version": "v4.2.16",
             "target-dir": "Illuminate/Container",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
-                "reference": "5c43bd3bd5eea2ed2061cd0dd57d72404aceb978"
+                "reference": "8db091c1b4e503ef8dcd4586d5c63e3997bc4e89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/container/zipball/5c43bd3bd5eea2ed2061cd0dd57d72404aceb978",
-                "reference": "5c43bd3bd5eea2ed2061cd0dd57d72404aceb978",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/8db091c1b4e503ef8dcd4586d5c63e3997bc4e89",
+                "reference": "8db091c1b4e503ef8dcd4586d5c63e3997bc4e89",
                 "shasum": ""
             },
             "require": {
@@ -103,21 +103,21 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-09-11 19:02:16"
+            "time": "2014-12-17 20:39:51"
         },
         {
             "name": "illuminate/database",
-            "version": "v4.2.9",
+            "version": "v4.2.16",
             "target-dir": "Illuminate/Database",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "b66a7173ca6a81de3b2ccbd84372bee8624215f1"
+                "reference": "5d07587a51b13224cdda6417fbc25e9c13d276c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/database/zipball/b66a7173ca6a81de3b2ccbd84372bee8624215f1",
-                "reference": "b66a7173ca6a81de3b2ccbd84372bee8624215f1",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/5d07587a51b13224cdda6417fbc25e9c13d276c9",
+                "reference": "5d07587a51b13224cdda6417fbc25e9c13d276c9",
                 "shasum": ""
             },
             "require": {
@@ -160,21 +160,21 @@
                 "orm",
                 "sql"
             ],
-            "time": "2014-09-11 14:10:29"
+            "time": "2014-12-22 20:55:49"
         },
         {
             "name": "illuminate/events",
-            "version": "v4.2.9",
+            "version": "v4.2.16",
             "target-dir": "Illuminate/Events",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
-                "reference": "19f93bcd692a52b39f1bd125f6f112eda0c1b8b0"
+                "reference": "a8471d3f6c3e87c50e25e18f13908fffaef159df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/events/zipball/19f93bcd692a52b39f1bd125f6f112eda0c1b8b0",
-                "reference": "19f93bcd692a52b39f1bd125f6f112eda0c1b8b0",
+                "url": "https://api.github.com/repos/illuminate/events/zipball/a8471d3f6c3e87c50e25e18f13908fffaef159df",
+                "reference": "a8471d3f6c3e87c50e25e18f13908fffaef159df",
                 "shasum": ""
             },
             "require": {
@@ -203,28 +203,28 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-08-17 14:08:00"
+            "time": "2014-10-02 19:49:50"
         },
         {
             "name": "illuminate/support",
-            "version": "v4.2.9",
+            "version": "v4.2.16",
             "target-dir": "Illuminate/Support",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "b6716d34afce6e69523725f2534a5c3a54dba964"
+                "reference": "015f51f4d8cb3d9a29e7fe7932843acf15232941"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/b6716d34afce6e69523725f2534a5c3a54dba964",
-                "reference": "b6716d34afce6e69523725f2534a5c3a54dba964",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/015f51f4d8cb3d9a29e7fe7932843acf15232941",
+                "reference": "015f51f4d8cb3d9a29e7fe7932843acf15232941",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "jeremeamia/superclosure": "~1.0",
+                "jeremeamia/superclosure": "~1.0.1",
                 "patchwork/utf8": "1.1.*"
             },
             "type": "library",
@@ -251,7 +251,49 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-09-12 21:42:43"
+            "time": "2014-12-19 18:02:33"
+        },
+        {
+            "name": "ircmaxell/password-compat",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ircmaxell/password_compat.git",
+                "reference": "de01fa521702990ed066446f2931914272336444"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ircmaxell/password_compat/zipball/de01fa521702990ed066446f2931914272336444",
+                "reference": "de01fa521702990ed066446f2931914272336444",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "lib/password.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anthony Ferrara",
+                    "email": "ircmaxell@php.net",
+                    "homepage": "http://blog.ircmaxell.com"
+                }
+            ],
+            "description": "A compatibility library for the proposed simplified password hashing algorithm: https://wiki.php.net/rfc/password_hash",
+            "homepage": "https://github.com/ircmaxell/password_compat",
+            "keywords": [
+                "hashing",
+                "password"
+            ],
+            "time": "2015-01-09 18:38:25"
         },
         {
             "name": "nesbot/carbon",
@@ -303,8 +345,11 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "ircmaxell/password-compat": 20
+    },
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
 }
