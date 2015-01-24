@@ -38,7 +38,9 @@ class SpamCheck extends Eloquent
 			$ip_response = array("IP" => $check_ip->ip);
 		}
 
-		$check_url = SpamCheck::where('url', '=', $info['url'])->first();
+		$check_url = SpamCheck::where('url', 'like', '%' . $info['url'] . '%')->first();
+
+		dd($check_url);
 		
 		if ( $check_url ) // URL BL
 		{

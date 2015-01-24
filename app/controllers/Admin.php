@@ -46,8 +46,13 @@ class Admin extends Controller
 			{
 				$info['url'] = 'http://' . $info['url'];
 			}
-			
+
 			SpamCheck::logSpammer($info);
+
+			$flash = 'Spammer added';
+
+			$this->view('Admin/AddSpammer', array($url, $ip, $flash) );
+
 		}
 		else
 		{

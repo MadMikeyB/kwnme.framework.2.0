@@ -1,12 +1,19 @@
 <ul class="nav nav-pills">
   <li role="presentation"><a href="admin">Admin</a></li>
-  <li role="presentation" class="active"><a href="admin/pages">Pages</a></li>
+  <li role="presentation"><a href="admin/pages">Pages</a></li>
   <li role="presentation"><a href="admin/users">Users</a></li>
   <li role="presentation"><a href="admin/stats">Stats</a></li>
-  <li role="presentation"><a href="admin/urls">URL's</a></li>
+  <li role="presentation" class="active"><a href="admin/urls">URL's</a></li>
 </ul>
 
-<h1>Add Page</h1>
+<?php if ( isset( $data[2] ) ): ?>
+<br />
+<div class="alert alert-success" role="alert">
+	<i class="fa fa-bell-o"></i>
+	<?php echo $data[2]; ?>
+</div>
+<?php endif; ?>
+<h1>Add Spammer</h1>
 <div class="well well-lg">
 	<form action="http://kwn.me/admin/addspammer" method="POST" role="form">
 		<label for="title">Spam URL</label>
