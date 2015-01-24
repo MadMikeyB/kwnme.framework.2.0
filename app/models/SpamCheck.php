@@ -39,8 +39,6 @@ class SpamCheck extends Eloquent
 		}
 
 		$check_url = SpamCheck::where('url', 'like', '%' . $info['url'] . '%')->first();
-
-		dd($check_url);
 		
 		if ( $check_url ) // URL BL
 		{
