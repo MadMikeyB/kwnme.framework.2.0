@@ -7,4 +7,7 @@
 	<li class="list-group-item"><span class="badge"><?php echo $data[1]->lastvisiteddon ?></span> Last visited on</li>
 	<li class="list-group-item"><span class="badge"><?php echo $data[1]->clickcount ?></span> Click count</li>
 	<li class="list-group-item"><span class="badge"><?php echo $data[1]->url ?></span> Long URL</li>
+	<?php if ( ( $user = Auth::check(@$_COOKIE['user']) ) && ( $user->group_id > '2' ) ): ?> 
+	<li class="list-group-item"><a href="http://kwn.me/admin/addspammer/<?php echo $data[1]->url; ?>/<?php echo $data[1]->userIP; ?>"><span class="badge"><?php echo $data[1]->url ?></span></a> Spam URL?</li>
+<?php endif; ?>
 </ul>
