@@ -24,11 +24,12 @@ foreach ( $data as $u ):
 ?>
   <tr>
   	<td><?php echo $u->id ?></td>
-  	<td><?php echo $u->url ?></td>
+  	<td><?php echo str_limit($u->url, 20); ?></td>
     <td><?php echo $u->base ?></td>
     <td><?php echo $u->slug ?></td>
     <td><?php echo $u->userIP ?></td>
     <td><?php echo $u->datecreated ?></td>
+    <td><a href="/admin/addspammer/<?php echo str_replace('http://', '', $u->url); ?>">Spam?</a></td>
   </tr>
 <?php
 endforeach;

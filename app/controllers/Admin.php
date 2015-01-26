@@ -63,7 +63,7 @@ class Admin extends Controller
 
 	public function users()
 	{
-		$users = KwnUser::paginate('25');
+		$users = KwnUser::where('id', '>', '0')->orderBy('id', 'desc')->simplePaginate('25');
 		if ( $users )
 		{
 			$this->view('Admin/Users', $users);

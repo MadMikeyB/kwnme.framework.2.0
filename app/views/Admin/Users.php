@@ -6,6 +6,7 @@
   <li role="presentation"><a href="admin/urls">URL's</a></li>
 </ul>
 <a class="btn btn-default pull-right" role="button" href="http://kwn.me/admin/adduser" role="button">Add New User</a>
+<div class="pull-right"><?php echo $data->links('pager'); ?></div>
 <h2>Admin &rarr; Users</h2>
 <div class="panel panel-default">
 	<div class="panel-heading">All Users</div>
