@@ -1146,54 +1146,6 @@
         ]
     },
     {
-        "name": "illuminate/pagination",
-        "version": "v4.2.16",
-        "version_normalized": "4.2.16.0",
-        "target-dir": "Illuminate/Pagination",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/illuminate/pagination.git",
-            "reference": "23e08eb2d5babb29e6972e483651e032f102d4de"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/illuminate/pagination/zipball/23e08eb2d5babb29e6972e483651e032f102d4de",
-            "reference": "23e08eb2d5babb29e6972e483651e032f102d4de",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/http": "4.2.*",
-            "illuminate/support": "4.2.*",
-            "illuminate/view": "4.2.*",
-            "php": ">=5.4.0",
-            "symfony/http-foundation": "2.5.*",
-            "symfony/translation": "2.5.*"
-        },
-        "time": "2014-09-21 16:05:47",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "4.2-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Illuminate\\Pagination": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Taylor Otwell",
-                "email": "taylorotwell@gmail.com"
-            }
-        ]
-    },
-    {
         "name": "philo/laravel-blade",
         "version": "v2.1",
         "version_normalized": "2.1.0.0",
@@ -1233,6 +1185,54 @@
         "keywords": [
             "blade",
             "laravel"
+        ]
+    },
+    {
+        "name": "illuminate/pagination",
+        "version": "4.2.x-dev",
+        "version_normalized": "4.2.9999999.9999999-dev",
+        "target-dir": "Illuminate/Pagination",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/illuminate/pagination.git",
+            "reference": "af3df9a8d07d0995ad9b85ee56d0cd4fdde2c8df"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/illuminate/pagination/zipball/af3df9a8d07d0995ad9b85ee56d0cd4fdde2c8df",
+            "reference": "af3df9a8d07d0995ad9b85ee56d0cd4fdde2c8df",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/http": "4.2.*",
+            "illuminate/support": "4.2.*",
+            "illuminate/view": "4.2.*",
+            "php": ">=5.4.0",
+            "symfony/http-foundation": "2.5.*",
+            "symfony/translation": "2.5.*"
+        },
+        "time": "2015-01-04 16:47:12",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.2-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Illuminate\\Pagination": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylorotwell@gmail.com"
+            }
         ]
     }
 ]

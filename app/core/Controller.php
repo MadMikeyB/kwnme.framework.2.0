@@ -43,6 +43,19 @@ class Controller
 		exit;
 	}
 
+
+	public static function limit( $string, $length, $start=0, $end="&#133;" )
+	{
+		if ( strlen( $string ) > $length ) 
+		{ 
+			return substr( $string , $start, $length ) . $end; 
+		}
+		else
+		{
+			return $string;
+		}
+	}
+
 	public static function slugify( $string )
 	{
 		$string = preg_replace('#[^a-zA-Z0-9]#', '-', $string);
@@ -77,4 +90,5 @@ class Controller
 			return $string;
 		}
 	}
+	
 }

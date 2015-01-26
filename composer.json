@@ -1,7 +1,7 @@
 {
     "require": {
         "illuminate/database": "~4.2",
-        "illuminate/pagination": "~4.2",
+        "illuminate/pagination": "4.2.*@dev",
         "philo/laravel-blade": "2.*",
         "filp/whoops": "~1.0",
 	    "ircmaxell/password-compat": "dev-master"
@@ -9,8 +9,8 @@
     "autoload": {
         "classmap": [
 			"app/models",
-            "app/core"
-            
+            "app/core",
+            "vendor/illuminate/support"
 		],
         "files": [
             "app/database.php"

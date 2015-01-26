@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "37c10f7225df665811689ed7eb1bc325",
+    "hash": "5110eccd74c37a178f5f891a4e911113",
     "packages": [
         {
             "name": "filp/whoops",
@@ -432,17 +432,17 @@
         },
         {
             "name": "illuminate/pagination",
-            "version": "v4.2.16",
+            "version": "4.2.x-dev",
             "target-dir": "Illuminate/Pagination",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/pagination.git",
-                "reference": "23e08eb2d5babb29e6972e483651e032f102d4de"
+                "reference": "af3df9a8d07d0995ad9b85ee56d0cd4fdde2c8df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/pagination/zipball/23e08eb2d5babb29e6972e483651e032f102d4de",
-                "reference": "23e08eb2d5babb29e6972e483651e032f102d4de",
+                "url": "https://api.github.com/repos/illuminate/pagination/zipball/af3df9a8d07d0995ad9b85ee56d0cd4fdde2c8df",
+                "reference": "af3df9a8d07d0995ad9b85ee56d0cd4fdde2c8df",
                 "shasum": ""
             },
             "require": {
@@ -474,7 +474,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-09-21 16:05:47"
+            "time": "2015-01-04 16:47:12"
         },
         {
             "name": "illuminate/session",
@@ -1199,6 +1199,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "illuminate/pagination": 20,
         "ircmaxell/password-compat": 20
     },
     "prefer-stable": false,

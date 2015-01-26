@@ -72,7 +72,7 @@ class Admin extends Controller
 
 	public function urls()
 	{
-		$urls = ShortUrl::paginate('25');
+		$urls = ShortUrl::where('id', '>', '0')->orderBy('id', 'desc')->simplePaginate('25');
 		if ( $urls )
 		{
 			$this->view('Admin/Urls', $urls);

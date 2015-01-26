@@ -26,6 +26,8 @@ foreach ( $data as $u ):
 <?php
 endforeach;
 ?>
+<?php echo $data->links(); ?>
+
   </table>
 </div>
 <a href="user/logout" class="right">Log out?</a>
