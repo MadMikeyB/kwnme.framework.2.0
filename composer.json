@@ -1,8 +1,10 @@
 {
     "require": {
         "illuminate/database": "~4.2",
+        "illuminate/pagination": "~4.2",
+        "philo/laravel-blade": "2.*",
         "filp/whoops": "~1.0",
-	"ircmaxell/password-compat": "dev-master"
+	    "ircmaxell/password-compat": "dev-master"
     },
     "autoload": {
         "classmap": [

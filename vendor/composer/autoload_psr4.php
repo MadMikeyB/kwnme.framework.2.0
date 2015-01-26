@@ -6,4 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Philo\\Blade\\' => array($vendorDir . '/philo/laravel-blade/src'),
 );

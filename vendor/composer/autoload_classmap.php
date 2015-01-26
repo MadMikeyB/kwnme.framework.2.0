@@ -12,6 +12,7 @@ return array(
     'KwnPage' => $baseDir . '/app/models/KwnPage.php',
     'KwnStats' => $baseDir . '/app/models/KwnStats.php',
     'KwnUser' => $baseDir . '/app/models/KwnUser.php',
+    'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
     'ShortUrl' => $baseDir . '/app/models/ShortUrl.php',
     'SpamCheck' => $baseDir . '/app/models/SpamCheck.php',
     'Whoops\\Module' => $vendorDir . '/filp/whoops/src/deprecated/Zend/Module.php',

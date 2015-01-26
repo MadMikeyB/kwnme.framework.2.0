@@ -63,11 +63,20 @@ class Admin extends Controller
 
 	public function users()
 	{
-		$users = KwnUser::all();
+		$users = KwnUser::paginate('25');
 		if ( $users )
 		{
 			$this->view('Admin/Users', $users);
 		}	
+	}
+
+	public function urls()
+	{
+		$urls = ShortUrl::paginate('25');
+		if ( $urls )
+		{
+			$this->view('Admin/Urls', $urls);
+		}
 	}
 
 	public function addPage()
