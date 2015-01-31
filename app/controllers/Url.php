@@ -98,7 +98,7 @@ class Url extends Controller
 
 	}
 
-	public static function forward( $base='' )
+	public static function forward( $base='', $stats = false )
 	{
 		// URL
 		if ( $url = ShortUrl::findByBase($base) )
@@ -109,18 +109,32 @@ class Url extends Controller
 			$clicks->lastvisiteddon = date('Y-m-d H:i:s');				
 			$clicks->save();
 
-			parent::redirect( $url->url );		
+			if ( $stats == true )
+			{
+				parent::redirect( 'http://kwn.me/stats/' . $url->base );
+			}
+			else
+			{
+				parent::redirect( $url->url );		
+			}
 		}
 		// Slug
-		else if ( $base->url )
+		else if ( isset($base->url) )
 		{
 			$clicks = ShortUrl::find($base->id);
 			$clicks->clickcount = $base->clickcount+1;
 			$clicks->createdon = $base->createdon;
-			$clicks->lastvisiteddon = date('Y-m-d H:i:s');				
+			$clicks->lastvisiteddon = date('Y-m-d H:i:s');	
 			$clicks->save();
 
-			parent::redirect( $base->url );
+			if ( $stats == true )
+			{
+				parent::redirect( 'http://kwn.me/stats/' . $base->slug );
+			}
+			else
+			{
+				parent::redirect( $base->url );
+			}
 		}
 		else
 		{

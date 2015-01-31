@@ -53,6 +53,11 @@ class App
 			$slug = ShortUrl::findBySlug( $base );
 			if ( $slug )
 			{
+				# @todo fix
+				if ( preg_match( '#%2B#', urlencode(urlencode($base)), $matches ) )
+				{
+					Url::forward($url, true);
+				}
 				Url::forward($slug);
 			}
 		}
@@ -80,6 +85,13 @@ class App
 		if ( isset( $_GET['url'] ) )
 		{
 			$url = explode( '/', filter_var( rtrim( $_GET['url'], '/'), FILTER_SANITIZE_URL ) );
+
+			if ( preg_match( '#%2B#', urlencode(urlencode($_GET['url'])), $matches ) )
+			{
+				require_once '../app/controllers/Url.php';
+				Url::forward($url, true);
+			}
+
 			if ( !$this->checkForBase( $url[0] ) )
 			{
 				return $url;
