@@ -60,6 +60,7 @@ class Url extends Controller
 				}
 
 				// check PhishTank
+				// @todo move API key to config
 				$vars = array(
 								'url'		=> $input['url'],
 								'format'	=> 'json',
