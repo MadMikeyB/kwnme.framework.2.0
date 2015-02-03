@@ -59,6 +59,33 @@ class Url extends Controller
 					$this->view('Spam/SpamURL');
 				}
 
+				// check PhishTank
+				$vars = array(
+								'url'		=> $input['url'],
+								'format'	=> 'json',
+								'app_key' 	=> '909ec35ba0319ace3ae8f531a2ce7413bc9a831c9c2fbd7020fec6247b484dda'
+							);
+
+				$ch = curl_init();
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+				curl_setopt($ch, CURLOPT_POST, true);
+				curl_setopt($ch, CURLOPT_USERAGENT, "kwn PhishTank API");
+				curl_setopt($ch, CURLOPT_POSTFIELDS, $vars);
+				curl_setopt($ch, CURLOPT_URL, 'http://checkurl.phishtank.com/checkurl/');
+				$result = curl_exec($ch);
+				curl_close($ch);
+
+				$data = json_decode($result);
+
+				if ( is_object( $data ) )
+				{
+					if ( property_exists( $data->results, 'phish_detail_page' ) )
+					{
+						$this->view('Spam/SpamURL');
+					}
+				}
+
+				// end PhishTank
 
 				if ( $input['email'] )
 				{
