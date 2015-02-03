@@ -81,6 +81,11 @@ class Url extends Controller
 				{
 					if ( property_exists( $data->results, 'phish_detail_page' ) )
 					{
+						$info = array(
+							'url'	=> $input['url']
+						);
+						SpamCheck::logSpammer($info);
+
 						$this->view('Spam/SpamURL');
 					}
 				}
