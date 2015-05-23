@@ -8,6 +8,11 @@ class Stats extends Controller
 		
 		if ( !$url )
 		{
+			$url = ShortUrl::findBySlug($base);
+		}
+
+		if ( !$url )
+		{
 			$stats = KwnStats::findTopStats();
 			$this->view('Stats/IdxStats', $stats);
 		}
