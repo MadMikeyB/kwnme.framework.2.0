@@ -10,7 +10,7 @@
 
 <script src="//cdn.ckeditor.com/4.4.6/basic/ckeditor.js"></script>
 
-<form action="http://kwn.me/admin/editpage/about" method="POST">
+<form action="http://kwn.me/admin/editpage/<?php echo $data->slug ?>" method="POST">
 	<textarea id="ckeditor" name="content" rows="50"><?php echo $data->content ?></textarea>
 	
 	<div align="center">

@@ -13,5 +13,8 @@ echo $data->content
 </div>
 
 <?php
-	//echo '<a href="/admin/editpage/'.$data->slug.'">Edit Page</a>';
+if ( $user = Auth::check( @$_COOKIE['user'] ) && ( $user->group_id === '3' ) )
+{
+	echo '<a href="/admin/editpage/'.$data->slug.'" class="pull-right label label-default" style="color:#FFFFFF !important;">Edit Page</a>';
+}
 ?>
