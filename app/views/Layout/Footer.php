@@ -6,7 +6,7 @@
     <?php endif; ?>
 	<a href="http://kwn.me/page/about" class="label label-success" style="color:#FFF !important;">About</a> | 
 	<a href="http://kwn.me/page/terms" class="label label-warning" style="color:#FFF !important;">Terms</a> | 
-	<a href="http://kwn.me/page/features" class="label label-pink" style="color:#FFF !important;">Features</a> | 
+	<a href="http://kwn.me/page/features" class="label label-pink" style="color:#FFF !important; background-color: #cc0099 !important;">Features</a> | 
 	<a href="http://kwn.me/page/contact" class="label label-info" style="color:#FFF !important;">Contact</a>
   <hr />
      	Copyright &copy; 2009-<?php echo date('Y') ?> kwn.me 
