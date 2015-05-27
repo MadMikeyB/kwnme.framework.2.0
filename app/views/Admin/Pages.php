@@ -9,7 +9,7 @@
 <a class="btn btn-default pull-right" role="button" href="http://kwn.me/admin/addpage" role="button">Add New Page</a>
 <h2>Admin &rarr; Pages</h2>
 <div class="panel panel-default">
-	<div class="panel-heading">All Users</div>
+	<div class="panel-heading">All Pages</div>
 	<div class="table-responsive">
 		<table class="table">
 			<thead>

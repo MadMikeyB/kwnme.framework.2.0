@@ -34,7 +34,10 @@ foreach ( $data as $u ):
     <td><?php echo $u->slug ?></td>
     <td><?php echo $u->userIP ?></td>
     <td><?php echo $u->datecreated ?></td>
-    <td><a href="/admin/addspammer/<?php echo str_replace('http://', '', $u->url); ?>">Spam?</a></td>
+    <?php $urlparts = parse_url($u->url); ?>
+    <?php if ( @$urlparts['host'] ): ?>
+    <td><a href="/admin/addspammer/<?php echo $urlparts['host']; ?>/<?php echo $u->userIP ?>">Spam?</a></td>
+    <?php endif; ?>
   </tr>
 <?php
 endforeach;
