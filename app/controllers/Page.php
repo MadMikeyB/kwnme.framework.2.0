@@ -36,6 +36,16 @@ class Page extends Controller
 			$headers  .= 'MIME-Version: 1.0' . "\r\n";
 			$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
+			if ( !$message )
+			{
+				$this->view('Error/Error', "Please enter a message");
+			}
+
+			if ( !$subject )
+			{
+				$this->view('Error/Error', "Please enter a subject");
+			}
+
 
 			if ( mail($to, $subject, $message, $headers) )
 			{

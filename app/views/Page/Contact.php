@@ -5,11 +5,11 @@
 <form role="form" action="page/contact" method="POST">
   <div class="form-group">
     <label for="subject">Subject</label>
-    <input type="text" class="form-control" id="subject" name="subject" placeholder="I love kwn.me!">
+    <input type="text" class="form-control" id="subject" name="subject" placeholder="I love kwn.me!" required>
   </div>
   <div class="form-group">
     <label for="email">(your) Email address:</label>
-    <input type="email" class="form-control" id="email" name="email" placeholder="haiku@kwn.me">
+    <input type="email" class="form-control" id="email" name="email" placeholder="haiku@kwn.me" required>
   </div>
   <div class="form-group">
     <label for="msg">Message:</label>
@@ -17,7 +17,7 @@
         Waiting for your mail,
         Anxious to hear what you say.
         Hope to read it soon!
-    "></textarea>
+    " required></textarea>
   </div>
   <button type="submit" class="btn btn-primary pull-right">Submit</button>
 </form>
