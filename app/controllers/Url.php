@@ -152,21 +152,21 @@ class Url extends Controller
 			}
 		}
 		// Slug
-		else if ( isset($base->url) )
+		else if ( $slug = ShortUrl::findBySlug($base) )
 		{
-			$clicks = ShortUrl::find($base->id);
-			$clicks->clickcount = $base->clickcount+1;
-			$clicks->createdon = $base->createdon;
+			$clicks = ShortUrl::find($slug->id);
+			$clicks->clickcount = $slug->clickcount+1;
+			$clicks->createdon = $slug->createdon;
 			$clicks->lastvisiteddon = date('Y-m-d H:i:s');	
 			$clicks->save();
 
 			if ( $stats == true )
 			{
-				parent::redirect( 'http://kwn.me/stats/' . $base->slug );
+				parent::redirect( 'http://kwn.me/stats/' . $slug->slug );
 			}
 			else
 			{
-				parent::redirect( $base->url );
+				parent::redirect( $slug->url );
 			}
 		}
 		else
