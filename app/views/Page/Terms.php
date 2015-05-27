@@ -10,6 +10,7 @@
 	<li>Attempting to compromise the service is forbidden</li>
 	<li>Copying / Cloning of the service is forbidden (without prior written notice)</li>
 	<li>Attempting to make profit from the service is forbidden (without prior written notice)</li>
+	<li> You will not send, cause to be sent or facilitate, Spam using the Service. Accounts that send Spam or that we believe may be facilitating Spam may be suspended and terminated</li>
 </ul>
 <p>Partaking in any of the above items will result in action being taken against you. Your account and content will be removed from the service, and legal action may be investigated</p>
 <h3>Registration / Privacy Policy</h3>
