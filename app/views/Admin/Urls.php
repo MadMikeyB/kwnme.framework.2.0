@@ -1,3 +1,8 @@
+<style>
+.box {
+  width: 60% !important;
+}
+</style>
 <ul class="nav nav-pills">
   <li role="presentation"><a href="admin">Admin</a></li>
   <li role="presentation"><a href="admin/pages">Pages</a></li>
@@ -29,7 +34,7 @@ foreach ( $data as $u ):
     <td><?php echo $u->slug ?></td>
     <td><?php echo $u->userIP ?></td>
     <td><?php echo $u->datecreated ?></td>
-    <td><a href="/admin/addspammer/<?php echo str_replace('http://', '', $u->url); ?>">Spam?</a></td>
+    <td><a href="/admin/addspammer/<?php echo str_replace('http://', '', urlencode($u->url)); ?>">Spam?</a></td>
   </tr>
 <?php
 endforeach;
