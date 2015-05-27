@@ -131,6 +131,12 @@ class Url extends Controller
 
 	}
 
+	/**
+	 * @var $base obj URL object (slug) or 
+	 * @var $base string URL base (base)
+	 * @var $stats bool Statistics
+	 */
+
 	public static function forward( $base='', $stats = false )
 	{
 		// URL
@@ -152,13 +158,18 @@ class Url extends Controller
 			}
 		}
 		// Slug
-		else if ( $slug = ShortUrl::findBySlug($base) )
+		else if ( isset( $base ) )
 		{
-			$clicks = ShortUrl::find($slug->id);
-			$clicks->clickcount = $slug->clickcount+1;
-			$clicks->createdon = $slug->createdon;
-			$clicks->lastvisiteddon = date('Y-m-d H:i:s');	
-			$clicks->save();
+			$slug = ShortUrl::findBySlug($base);
+
+			if ( is_object( $base ) )
+			{
+				$clicks = ShortUrl::find($base->id);
+				$clicks->clickcount = $base->clickcount+1;
+				$clicks->createdon = $base->createdon;
+				$clicks->lastvisiteddon = date('Y-m-d H:i:s');	
+				$clicks->save();
+			}
 
 			if ( $stats == true )
 			{
@@ -166,7 +177,7 @@ class Url extends Controller
 			}
 			else
 			{
-				parent::redirect( $slug->url );
+				parent::redirect( $base->url );
 			}
 		}
 		else
