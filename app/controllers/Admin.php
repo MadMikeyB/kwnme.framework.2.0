@@ -35,7 +35,7 @@ class Admin extends Controller
 
 	public function spammers()
 	{
-		$spammers = SpamCheck::all();
+		$spammers = SpamCheck::where('id', '>', '0')->orderBy('id', 'desc')->simplePaginate('25');
 		if ( $spammers )
 		{
 			$this->view('Admin/Spammers', $spammers);
