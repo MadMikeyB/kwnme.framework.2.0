@@ -8,6 +8,7 @@
   <li role="presentation" class="active"><a href="admin/spammers">Spammers</a></li>
 </ul>
 
+<div class="pull-right"><?php echo $data->links('pager'); ?></div>
 <a class="btn btn-default pull-right" role="button" href="http://kwn.me/admin/addspammer" role="button">Add Spammer</a>
 <h2>Admin &rarr; Spammers</h2>
 <div class="panel panel-default">
