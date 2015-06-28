@@ -4,6 +4,7 @@
   <li role="presentation"><a href="admin/users">Users</a></li>
   <li role="presentation"><a href="admin/stats">Stats</a></li>
   <li role="presentation"><a href="admin/urls">URL's</a></li>
+  <li role="presentation"><a href="admin/spammers">Spammers</a></li>
 </ul>
 
 <a class="btn btn-default pull-right" role="button" href="http://kwn.me/admin/addpage" role="button">Add New Page</a>

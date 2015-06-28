@@ -3,7 +3,8 @@
   <li role="presentation"><a href="admin/pages">Pages</a></li>
   <li role="presentation"><a href="admin/users">Users</a></li>
   <li role="presentation"><a href="admin/stats">Stats</a></li>
-  <li role="presentation" class="active"><a href="admin/urls">URL's</a></li>
+  <li role="presentation"><a href="admin/urls">URL's</a></li>
+  <li role="presentation" class="active"><a href="admin/spammers">Spammers</a></li>
 </ul>
 
 <?php if ( isset( $data[2] ) ): ?>

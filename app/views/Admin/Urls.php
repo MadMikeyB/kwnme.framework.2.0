@@ -9,6 +9,7 @@
   <li role="presentation"><a href="admin/users">Users</a></li>
   <li role="presentation"><a href="admin/stats">Stats</a></li>
   <li role="presentation" class="active"><a href="admin/urls">URL's</a></li>
+  <li role="presentation"><a href="admin/spammers">Spammers</a></li>
 </ul>
 
 <div class="pull-right"><?php echo $data->links('pager'); ?></div>

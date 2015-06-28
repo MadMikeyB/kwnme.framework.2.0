@@ -4,6 +4,7 @@
   <li role="presentation"><a href="admin/users">Users</a></li>
   <li role="presentation"><a href="admin/stats">Stats</a></li>
   <li role="presentation"><a href="admin/urls">URL's</a></li>
+  <li role="presentation"><a href="admin/spammers">Spammers</a></li>
 </ul>
 
 <h1>Add Page</h1>

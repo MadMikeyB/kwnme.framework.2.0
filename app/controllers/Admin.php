@@ -33,6 +33,15 @@ class Admin extends Controller
 		}
 	}
 
+	public function spammers()
+	{
+		$spammers = SpamCheck::all();
+		if ( $spammers )
+		{
+			$this->view('Admin/Spammers', $spammers);
+		}
+	}
+
 	public function addSpammer( $url=null, $ip=null )
 	{
 		$input = $_POST;
