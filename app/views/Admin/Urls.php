@@ -29,7 +29,7 @@
 foreach ( $data as $u ):
 ?>
   <tr>
-  	<td><?php echo $u->id ?></td>
+  	<td><a href="<?php echo $u->url ?>"><?php echo $u->id ?></a></td>
   	<td><?php echo str_limit($u->url, 20); ?></td>
     <td><?php echo $u->base ?></td>
     <td><?php echo $u->slug ?></td>
