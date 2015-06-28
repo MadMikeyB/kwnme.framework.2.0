@@ -17,10 +17,10 @@
 <h1>Add Spammer</h1>
 <div class="well well-lg">
 	<form action="http://kwn.me/admin/addspammer" method="POST" role="form">
-		<label for="title">Spam URL</label>
+		<label for="url">Spam URL</label>
 		<input type="text" name="url" class="form-control" value="<?php if (isset($data[0])) { echo $data[0]; } ?>" />
 
-		<label for="title">Spam IP <small>(Optional)</small></label>
+		<label for="ip">Spam IP <small>(Optional)</small></label>
 		<input type="text" name="ip" class="form-control" value="<?php if (isset($data[1])) { echo $data[1]; } ?>"  />
 		<div align="center">
 			<input type="submit" value="Save &rarr;" class="button">

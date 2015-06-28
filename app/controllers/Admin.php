@@ -49,8 +49,9 @@ class Admin extends Controller
 		{
 			$info = array(
 								'url'	=> $input['url'],
-								'ip'	=> isset($input['ip'])
+								'ip'	=> isset($input['ip']) ? $input['ip'] : 0
 							);
+
 			if ( !preg_match( "/(http|https):\/\/(.*?)$/i", $info['url'] ) )
 			{
 				$info['url'] = 'http://' . $info['url'];
