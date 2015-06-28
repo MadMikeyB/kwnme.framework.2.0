@@ -6,12 +6,11 @@
   <li role="presentation"><a href="admin/urls">URL's</a></li>
   <li role="presentation" class="active"><a href="admin/spammers">Spammers</a></li>
 </ul>
-
-<?php if ( isset( $data[2] ) ): ?>
+<?php if ( isset( $data[3] ) ): ?>
 <br />
 <div class="alert alert-success" role="alert">
 	<i class="fa fa-bell-o"></i>
-	<?php echo $data[2]; ?>
+	<?php echo $data[3]; ?>
 </div>
 <?php endif; ?>
 <h1>Add Spammer</h1>
@@ -22,6 +21,9 @@
 
 		<label for="ip">Spam IP <small>(Optional)</small></label>
 		<input type="text" name="ip" class="form-control" value="<?php if (isset($data[1])) { echo $data[1]; } ?>"  />
+
+		<label for="base">Spam Base <small>(Optional)</small></label>
+		<input type="text" name="base" class="form-control" value="<?php if (isset($data[2])) { echo $data[2]; } ?>"  />
 		<div align="center">
 			<input type="submit" value="Save &rarr;" class="button">
 		</div>

@@ -42,14 +42,15 @@ class Admin extends Controller
 		}
 	}
 
-	public function addSpammer( $url=null, $ip=null )
+	public function addSpammer( $url=null, $ip=null, $base=null )
 	{
 		$input = $_POST;
 		if ( $input )
 		{
 			$info = array(
 								'url'	=> $input['url'],
-								'ip'	=> isset($input['ip']) ? $input['ip'] : 0
+								'ip'	=> isset($input['ip']) ? $input['ip'] : 0,
+								'base'	=> isset($input['base']) ? $input['base'] : 0
 							);
 
 			if ( !preg_match( "/(http|https):\/\/(.*?)$/i", $info['url'] ) )
@@ -61,12 +62,16 @@ class Admin extends Controller
 
 			$flash = 'Spammer added';
 
-			$this->view('Admin/AddSpammer', array($url, $ip, $flash) );
+			$url = ShortUrl::findByBase( $info['base'] );
+			$url->is_spam = true;
+			$url->save();
+
+			$this->view('Admin/AddSpammer', array($url, $ip, $base, $flash) );
 
 		}
 		else
 		{
-			$this->view('Admin/AddSpammer', array($url, $ip) );
+			$this->view('Admin/AddSpammer', array($url, $ip, $base) );
 		}
 
 	}

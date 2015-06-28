@@ -37,7 +37,7 @@ foreach ( $data as $u ):
     <td><?php echo $u->datecreated ?></td>
     <?php $urlparts = parse_url($u->url); ?>
     <?php if ( @$urlparts['host'] ): ?>
-    <td><a href="/admin/addspammer/<?php echo $urlparts['host']; ?>/<?php echo $u->userIP ?>">Spam?</a></td>
+    <td><a href="/admin/addspammer/<?php echo $urlparts['host']; ?>/<?php echo $u->userIP ?>/<?php echo $u->base ?>">Spam?</a></td>
     <?php endif; ?>
   </tr>
 <?php
