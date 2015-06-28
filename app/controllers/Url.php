@@ -142,6 +142,11 @@ class Url extends Controller
 		// URL
 		if ( $url = ShortUrl::findByBase($base) )
 		{
+			if ( $url->is_spam == '1' )
+			{
+				parent::view('Error/Error', 'kwn.me has detected that <mark>'.$url->url.'</mark> is a spam URL.<br /><br /> We care about your online safety and will not redirect you to this URL, it has been banned from our service and the IP address of the submitter has been submitted to anti-spam databases.<br /><br /> If you wish to proceed, please do so at your own risk. <br /><br /> Thanks for using kwn.me :)');
+			}
+
 			$clicks = ShortUrl::find($url->id);
 			$clicks->clickcount = $url->clickcount+1;
 			$clicks->createdon = $url->createdon;
@@ -161,6 +166,11 @@ class Url extends Controller
 		else if ( isset( $base ) )
 		{
 			$slug = ShortUrl::findBySlug($base);
+
+			if ( $base->is_spam == '1' )
+			{
+				parent::view('Error/Error', 'kwn.me has detected that <mark>'.$base->url.'</mark> is a spam URL.<br /><br /> We care about your online safety and will not redirect you to this URL, it has been banned from our service and the IP address of the submitter has been submitted to anti-spam databases.<br /><br /> If you wish to proceed, please do so at your own risk. <br /><br /> Thanks for using kwn.me :)');
+			}
 
 			if ( is_object( $base ) )
 			{

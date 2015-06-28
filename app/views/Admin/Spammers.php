@@ -19,6 +19,7 @@
 					<th>#</th>
 					<th>Spam URL</th>
 					<th>Spam IP Address</th>
+					<th>Spam Base</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -27,6 +28,7 @@
 			<th scope="row"><?php echo $spam->id ?></th>
 			<td><?php echo $spam->url ?></td>
 			<td><?php echo $spam->ip ?></td>
+			<td><?php echo $spam->base ?> <a href="http://kwn.me/<?php echo $spam->base ?>">(visit?)</a></td>
 		</tr>
 	<?php endforeach; ?>
 			</tbody>
