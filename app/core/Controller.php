@@ -23,18 +23,41 @@ class Controller
 
 	public static function view( $view, $data = array() )
 	{
-		if ( file_exists( '../app/views/' . ucfirst( $view ) . '.php' ) )
+		// Header
+		require_once '../app/views/Layout/Header.php';
+
+		if ( is_array($view) )
 		{
-			require_once '../app/views/Layout/Header.php';
-			require_once '../app/views/' . ucfirst( $view ) . '.php';
-			require_once '../app/views/Layout/Footer.php';
-			exit;
+			foreach ( $view as $v )
+			{
+				if ( file_exists( '../app/views/' . ucfirst( $v) . '.php' ) )
+				{
+					require_once '../app/views/' . ucfirst( $v ) . '.php';
+				}
+				else
+				{
+					# Error Handler
+					self::view('Error/Error', 'An Error Ocurred [#NOVIEW]');
+				}
+			}
 		}
 		else
 		{
-			# Error Handler
-			self::view('Error/Error', 'An Error Ocurred [#NOVIEW]');
+
+			if ( file_exists( '../app/views/' . ucfirst( $view ) . '.php' ) )
+			{
+				require_once '../app/views/' . ucfirst( $view ) . '.php';
+			}
+			else
+			{
+				# Error Handler
+				self::view('Error/Error', 'An Error Ocurred [#NOVIEW]');
+			}
 		}
+
+		// Footer
+		require_once '../app/views/Layout/Footer.php';
+		exit;
 	}
 
 	public static function redirect( $url, $code='307' ) // Using http response code 307 as URL Redirect may be altered for spam purposes. 302 is lending too much credence to the redirect. @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html

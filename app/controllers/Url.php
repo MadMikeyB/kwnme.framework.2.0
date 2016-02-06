@@ -102,7 +102,7 @@ class Url extends Controller
 								'ip'	=> $_SERVER['REMOTE_ADDR']
 							);
 					SpamCheck::logSpammer($info);
-					$this->view('Spam/SpamURL');
+					$this->view(['Spam/SpamURL', 'Page/Terms']);
 				}
 				// end SpamHaus
 
