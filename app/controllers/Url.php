@@ -24,6 +24,8 @@ class Url extends Controller
 					$slug = NULL;
 				}
 
+				$input['parsed_url'] = parse_url( $input['url'] );
+
 				$maxId = ShortUrl::max('id');
 				$base = base_convert($maxId+1, 12, 32);
 
@@ -77,7 +79,6 @@ class Url extends Controller
 				curl_close($ch);
 
 				$data = json_decode($result);
-
 				if ( is_object( $data ) )
 				{
 					if ( property_exists( $data->results, 'phish_detail_page' ) )
@@ -93,6 +94,21 @@ class Url extends Controller
 
 				// end PhishTank
 
+				// SpamHaus
+				$spamhaus = dns_get_record($input['parsed_url']['host'] . '.dbl.spamhaus.org', DNS_A);
+				if ($spamhaus != NULL && count($spamhaus) > 0) 
+				{
+					$info = array(
+								'url'	=> $input['url'],
+								'ip'	=> $_SERVER['REMOTE_ADDR']
+							);
+					SpamCheck::logSpammer($info);
+					$this->view('Spam/SpamURL');
+				}
+				// end SpamHaus
+
+				// Automatic Form Filling Robot Check
+
 				if ( $input['email'] )
 				{
 					$info = array(
@@ -102,6 +118,8 @@ class Url extends Controller
 					SpamCheck::logSpammer($info);
 					$this->view('Spam/Spam');
 				}
+
+				// end AFFRC
 
 	
 				// END SPAM CHECK
