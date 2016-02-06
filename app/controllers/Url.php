@@ -91,7 +91,6 @@ class Url extends Controller
 						$this->view('Spam/SpamURL');
 					}
 				}
-
 				// end PhishTank
 
 				// SpamHaus
@@ -108,7 +107,6 @@ class Url extends Controller
 				// end SpamHaus
 
 				// Automatic Form Filling Robot Check
-
 				if ( $input['email'] )
 				{
 					$info = array(
@@ -118,7 +116,6 @@ class Url extends Controller
 					SpamCheck::logSpammer($info);
 					$this->view('Spam/Spam');
 				}
-
 				// end AFFRC
 
 	
