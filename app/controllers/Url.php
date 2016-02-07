@@ -41,10 +41,9 @@ class Url extends Controller
 
 				// SPAM CHECK
 				// There's a hidden div containing a text field. Spam bots will fill this in as they like to fill out as much as possible. Allowing us to detect them and block them.
-				// @todo - query Project Honeypot and stuff.
 				$is_spam = SpamCheck::checkSpammer(
 					array(
-							'url'	=> $input['url'],
+							'url'	=> $input['parsed_url']['host'],
 							'ip'	=> $_SERVER['REMOTE_ADDR'],
 						)
 				);
