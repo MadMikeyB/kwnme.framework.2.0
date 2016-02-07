@@ -124,7 +124,6 @@ class Admin extends Controller
 			$kwnPage = KwnPage::find($page->id);
 			$kwnPage->content = $input['content'];
 			$kwnPage->save();
-			//dd($page);
 			$this->redirect( 'http://kwn.me/page/' . $page->slug );
 		}
 		else
@@ -138,6 +137,44 @@ class Admin extends Controller
 			$this->view('Admin/EditPage', $page);
 
 		}
+	}
+
+	public function findSpamUrls()
+	{
+		$urls = ShortUrl::where('spam_checked', '=', '0')->orderBy('id', 'desc')->limit('150')->get();
+		$spamCount = 0;
+		foreach ( $urls as $url )
+		{
+			$parsed_url = parse_url($url->url);
+			$spamhaus = dns_get_record($parsed_url['host'] . '.dbl.spamhaus.org', DNS_A);
+
+			if ($spamhaus != NULL && count($spamhaus) > 0) 
+			{
+				$info = array(
+								'url'	=> $url->url,
+								'ip'	=> $url->userIP
+							);
+				SpamCheck::logSpammer($info);
+
+				$url->is_spam = true;
+				$url->save();
+
+				$spamCount++;
+				echo 'Spammer added: '. $url->url .' BASE: kwn.me/' . $url->base . '<br />';
+			}
+			else
+			{
+				echo 'NOT SPAM (phew): '. $url->url .' kwn.me/' . $url->base . '<br />';
+			}
+
+
+				$url->spam_checked = '1';
+				$url->save();
+			//sleep(5);
+		}
+		
+		echo $spamCount . ' Spammers added to DB';
+		//$this->view('Admin/Spammers', $spammers);
 
 	}
 
